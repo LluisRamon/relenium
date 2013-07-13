@@ -31,4 +31,9 @@ enterSeq <- .jarray(J(keys, "valueOf", "ENTER"), "java/lang/CharSequence")
 J(remoteWebElement, "sendKeys", enterSeq)
   ## alternativament podriem fer J(remoteWebElement, "submit")
 
+  ## Per navegar :
+jNavigate <- jDriver$navigate()
+jNavigate$back()
+jNavigate$forward()
+
 
