@@ -1,6 +1,7 @@
 \name{webElement}
-\alias{initialize,webElement-method}
+\alias{initialize}
 \alias{webElement}
+\alias{webElement-method}
 \title{Web Element class}
 \usage{
   webElement(...)
