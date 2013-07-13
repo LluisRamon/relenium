@@ -16,7 +16,7 @@
 #' 
 #' @return open firefox 
 #' 
-#' @author Aleix Ruiz de Villa, Andreu Vall, Lluís Ramon
+#' @author Aleix Ruiz de Villa, Andreu Vall, Lluis Ramon
 #' @seealso \code{\link{webElement}}
 #' 
 #' @export
@@ -87,3 +87,17 @@ firefox$methods(close = function(){
   return(invisible())
   
 })
+
+firefox$methods(getCurrentUrl = function(){
+  
+  currentUrl <- try(javaDriver$getCurrentUrl(), silent = TRUE)
+  
+  if(class(currentUrl) == "try-error"){
+    print(currentUrl)
+    return(invisible())
+  }
+  
+  return(currentUrl)
+  
+})
+

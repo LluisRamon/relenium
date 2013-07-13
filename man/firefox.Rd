@@ -32,7 +32,7 @@ driver$getTitle()
 driver$close()
 }
 \author{
-  Aleix Ruiz de Villa, Andreu Vall, Lluís Ramon
+  Aleix Ruiz de Villa, Andreu Vall, Lluis Ramon
 }
 \seealso{
   \code{\link{webElement}}
