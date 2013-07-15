@@ -39,7 +39,7 @@ firefox$methods(initialize = function(...){
 
 firefox$methods(get = function(url){
   
-  javaDriver$get(url)
+  J(javaDriver, "get", url)
   
   return(invisible())
   
@@ -47,7 +47,7 @@ firefox$methods(get = function(url){
 
 firefox$methods(getTitle = function(){
   
-  title <- javaDriver$getTitle()
+  title <- J(javaDriver, "getTitle")
   
   return(title)
   
@@ -55,7 +55,7 @@ firefox$methods(getTitle = function(){
 
 firefox$methods(findElementsByXPath = function(xpath){
   
-  elements <- javaDriver$findElementsByXPath(xpath)
+  elements <- J(jDriver, "findElementsByXPath", xpath)
   elements <- as.list(elements)
   
   elements <- lapply(elements, function(javaObject){
@@ -69,7 +69,7 @@ firefox$methods(findElementsByXPath = function(xpath){
 
 firefox$methods(findElementByXPath = function(xpath){
   
-  element <- try(javaDriver$findElementByXPath(xpath), silent = TRUE)
+  element <- try(J(jDriver, "findElementByXPath", xpath), silent = TRUE)
   
   if(class(element) == "try-error"){
     print(element)
@@ -82,7 +82,7 @@ firefox$methods(findElementByXPath = function(xpath){
 
 firefox$methods(close = function(){
   
-  javaDriver$close()
+  J(javaDriver, "close")
   
   return(invisible())
   
@@ -90,7 +90,7 @@ firefox$methods(close = function(){
 
 firefox$methods(getCurrentUrl = function(){
   
-  currentUrl <- try(javaDriver$getCurrentUrl(), silent = TRUE)
+  currentUrl <- try(J(javaDriver, "getCurrentUrl"), silent = TRUE)
   
   if(class(currentUrl) == "try-error"){
     print(currentUrl)
@@ -100,4 +100,7 @@ firefox$methods(getCurrentUrl = function(){
   return(currentUrl)
   
 })
+
+
+
 
