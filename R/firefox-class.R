@@ -102,5 +102,14 @@ firefox$methods(getCurrentUrl = function(){
 })
 
 
+firefox$methods(show = function(){
+  
+  print("Html code")
+  
+  # Return with Rcurl html code. Maybe too slow. 
+  
+  return(invisible())
+  
+})
 
 
