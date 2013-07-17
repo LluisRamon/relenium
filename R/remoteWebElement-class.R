@@ -35,5 +35,5 @@ remoteWebElementClass$methods(sendKeys = function(text = NULL, keys = NULL){
     J(javaWebElement, "sendKeys", javaKeys$keysArray[[keys]])
   }
   
-  return()
+  return(invisible())
 })

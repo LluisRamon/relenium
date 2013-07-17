@@ -29,12 +29,20 @@
 #' driver$close()
 #'  
 
-firefoxClass <- setRefClass("firefoxClass", fields = list(javaDriver = "ANY"))
+firefoxClass <- setRefClass("firefoxClass", fields = list(javaDriver = "ANY",
+                                                          javaNavigate = "ANY"))
 
 firefoxClass$methods(initialize = function(...){
   javaDriver <<- .jnew("org.openqa.selenium.firefox.FirefoxDriver")
+  javaNavigate <<- javaDriver$navigate()
   
   callSuper(...)
+})
+
+firefoxClass$methods(back = function(){
+  javaNavigate$back()
+  
+  return(invisible())
 })
 
 firefoxClass$methods(get = function(url){
@@ -95,6 +103,19 @@ firefoxClass$methods(getCurrentUrl = function(){
   return(currentUrl)
   
 })
+
+firefoxClass$methods(forward = function(){
+  javaNavigate$forward()
+  
+  return(invisible())
+})
+
+firefoxClass$methods(refresh = function(){
+  javaNavigate$refresh()
+  
+  return(invisible())
+})
+
 
 
 firefoxClass$methods(show = function(){
