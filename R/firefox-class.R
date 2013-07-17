@@ -1,4 +1,4 @@
-#' Firefox class
+#' firefox class
 #'
 #' This class is designed to represent a firefox navigator.
 #' 
@@ -29,15 +29,15 @@
 #' driver$close()
 #'  
 
-firefox <- setRefClass("firefox", fields = list(javaDriver = "ANY"))
+firefoxClass <- setRefClass("firefoxClass", fields = list(javaDriver = "ANY"))
 
-firefox$methods(initialize = function(...){
+firefoxClass$methods(initialize = function(...){
   javaDriver <<- .jnew("org.openqa.selenium.firefox.FirefoxDriver")
   
   callSuper(...)
 })
 
-firefox$methods(get = function(url){
+firefoxClass$methods(get = function(url){
   
   J(javaDriver, "get", url)
   
@@ -45,7 +45,7 @@ firefox$methods(get = function(url){
   
 })
 
-firefox$methods(getTitle = function(){
+firefoxClass$methods(getTitle = function(){
   
   title <- J(javaDriver, "getTitle")
   
@@ -53,13 +53,13 @@ firefox$methods(getTitle = function(){
   
 })
 
-firefox$methods(findElementsByXPath = function(xpath){
+firefoxClass$methods(findElementsByXPath = function(xpath){
   
-  elements <- J(jDriver, "findElementsByXPath", xpath)
+  elements <- J(javaDriver, "findElementsByXPath", xpath)
   elements <- as.list(elements)
   
   elements <- lapply(elements, function(javaObject){
-    webElemAux <- webElement$new(javaObject)
+    webElemAux <- remoteWebElementClass$new(javaObject)
     return(webElemAux)
   })
   
@@ -67,20 +67,15 @@ firefox$methods(findElementsByXPath = function(xpath){
   
 })
 
-firefox$methods(findElementByXPath = function(xpath){
+firefoxClass$methods(findElementByXPath = function(xpath){
   
-  element <- try(J(jDriver, "findElementByXPath", xpath), silent = TRUE)
+  webElement <- remoteWebElementClass$new(J(javaDriver, "findElementByXPath", xpath))
   
-  if(class(element) == "try-error"){
-    print(element)
-    return(invisible())
-  }
-  
-  return(element)
+  return(webElement)
   
 })
 
-firefox$methods(close = function(){
+firefoxClass$methods(close = function(){
   
   J(javaDriver, "close")
   
@@ -88,7 +83,7 @@ firefox$methods(close = function(){
   
 })
 
-firefox$methods(getCurrentUrl = function(){
+firefoxClass$methods(getCurrentUrl = function(){
   
   currentUrl <- try(J(javaDriver, "getCurrentUrl"), silent = TRUE)
   
@@ -102,7 +97,7 @@ firefox$methods(getCurrentUrl = function(){
 })
 
 
-firefox$methods(show = function(){
+firefoxClass$methods(show = function(){
   
   print("Html code")
   
