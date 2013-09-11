@@ -51,28 +51,15 @@ firefoxClass$methods(initialize = function(...){
 
 firefoxClass$methods(back = function(){
   javaNavigate$back()
-  
   return(invisible())
 })
 
-firefoxClass$methods(get = function(url){
-  
-  J(javaDriver, "get", url)
-  
+firefoxClass$methods(close = function(){
+  J(javaDriver, "close")
   return(invisible())
-  
-})
-
-firefoxClass$methods(getTitle = function(){
-  
-  title <- J(javaDriver, "getTitle")
-  
-  return(title)
-  
 })
 
 firefoxClass$methods(findElementsByXPath = function(xpath){
-  
   elements <- J(javaDriver, "findElementsByXPath", xpath)
   elements <- as.list(elements)
   
@@ -82,51 +69,37 @@ firefoxClass$methods(findElementsByXPath = function(xpath){
   })
   
   return(elements)
-  
 })
 
 firefoxClass$methods(findElementByXPath = function(xpath){
-  
   webElement <- remoteWebElementClass$new(J(javaDriver, "findElementByXPath", xpath))
-  
   return(webElement)
-  
-})
-
-firefoxClass$methods(close = function(){
-  
-  J(javaDriver, "close")
-  
-  return(invisible())
-  
-})
-
-firefoxClass$methods(getCurrentUrl = function(){
-  
-  currentUrl <- try(J(javaDriver, "getCurrentUrl"), silent = TRUE)
-  
-  if(class(currentUrl) == "try-error"){
-    print(currentUrl)
-    return(invisible())
-  }
-  
-  return(currentUrl)
-  
 })
 
 firefoxClass$methods(forward = function(){
   javaNavigate$forward()
-  
   return(invisible())
 })
+
+firefoxClass$methods(get = function(url){
+  J(javaDriver, "get", url)
+  return(invisible())
+})
+
+firefoxClass$methods(getTitle = function(){
+  title <- J(javaDriver, "getTitle")
+  return(title)
+})
+
+firefoxClass$methods(getCurrentUrl = function(){
+  return(J(javaDriver, "getCurrentUrl"))
+})
+
 
 firefoxClass$methods(refresh = function(){
   javaNavigate$refresh()
-  
   return(invisible())
 })
-
-
 
 # firefoxClass$methods(show = function(){
 #   

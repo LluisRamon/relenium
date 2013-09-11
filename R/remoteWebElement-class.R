@@ -36,6 +36,56 @@ remoteWebElementClass$methods(initialize = function(javaObj, ...){
   callSuper(...)
 })
 
+remoteWebElementClass$methods(clear = function(){
+  J(javaWebElement, "clear")
+  return(invisible())
+})
+
+remoteWebElementClass$methods(click = function(){
+  J(javaWebElement, "click")
+  return(invisible())
+})
+
+remoteWebElementClass$methods(getAttribute = function(stringName){
+  return(J(javaWebElement, "getAttribute", stringName))
+})
+
+remoteWebElementClass$methods(getCssValue = function(stringName){
+  return(J(javaWebElement, "getCssValue", stringName))
+})
+
+remoteWebElementClass$methods(getId = function(){
+  return(J(javaWebElement, "getId"))
+})
+
+remoteWebElementClass$methods(getSize = function(){
+  return(J(javaWebElement, "getSize"))
+})
+
+remoteWebElementClass$methods(getTagName = function(){
+  return(J(javaWebElement, "getTagName"))
+})
+
+remoteWebElementClass$methods(getText = function(){
+  return(J(javaWebElement, "getText"))
+})
+
+remoteWebElementClass$methods(isDisplayed = function(){
+  J(javaWebElement, "isDisplayed")
+  return(invisible())
+})
+
+remoteWebElementClass$methods(isEnabled = function(){
+  J(javaWebElement, "isEnabled")
+  return(invisible())
+})
+
+remoteWebElementClass$methods(isSelected = function(){
+  J(javaWebElement, "isSelected")
+  return(invisible())
+})
+
+
 remoteWebElementClass$methods(sendKeys = function(text = NULL, keys = NULL){
   
   if ( is.null(keys) ){
@@ -48,5 +98,11 @@ remoteWebElementClass$methods(sendKeys = function(text = NULL, keys = NULL){
   return(invisible())
 })
 
-.DollarNames.remoteWebElement <- function(x, pattern)
+remoteWebElementClass$methods(submit = function(){
+  J(javaWebElement, "submit")
+  return(invisible())
+})
+
+
+.DollarNames.remoteWebElementClass <- function(x, pattern)
   grep(pattern, x$methodNames, value=TRUE)
