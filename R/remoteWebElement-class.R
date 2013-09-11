@@ -17,11 +17,21 @@
 
 
 remoteWebElementClass <- setRefClass("remoteWebElementClass", fields = list(javaKeys = "javaKeysClass", 
-                                                                  javaWebElement = "ANY"))
+                                                                            javaWebElement = "ANY",
+                                                                            methodNames = "character"))
 
 remoteWebElementClass$methods(initialize = function(javaObj, ...){
   javaWebElement <<- javaObj
   javaKeys <<- javaKeysClass$new()
+  
+  # Method Names
+  aux <- setRefClass("AuxRefClass")
+  auxMeth <- c(aux$methods(), "initialize")
+  objMeth <- getRefClass(class(.self))$methods()
+  ind <- sapply(objMeth, function(obj){
+    !(obj %in% auxMeth)
+  })
+  methodNames <<- objMeth[ind]
   
   callSuper(...)
 })
@@ -37,3 +47,6 @@ remoteWebElementClass$methods(sendKeys = function(text = NULL, keys = NULL){
   
   return(invisible())
 })
+
+.DollarNames.remoteWebElement <- function(x, pattern)
+  grep(pattern, x$methodNames, value=TRUE)
