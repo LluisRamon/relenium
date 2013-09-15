@@ -18,11 +18,13 @@
 
 remoteWebElementClass <- setRefClass("remoteWebElementClass", fields = list(javaKeys = "javaKeysClass", 
                                                                             javaWebElement = "ANY",
+                                                                            keys = "character",
                                                                             methodNames = "character"))
 
 remoteWebElementClass$methods(initialize = function(javaObj, ...){
   javaWebElement <<- javaObj
   javaKeys <<- javaKeysClass$new()
+  keys <<- javaKeys$keysNames
   
   # Method Names
   aux <- setRefClass("AuxRefClass")
@@ -31,7 +33,7 @@ remoteWebElementClass$methods(initialize = function(javaObj, ...){
   ind <- sapply(objMeth, function(obj){
     !(obj %in% auxMeth)
   })
-  methodNames <<- objMeth[ind]
+  methodNames <<- c(objMeth[ind], "keys")
   
   callSuper(...)
 })
@@ -46,12 +48,49 @@ remoteWebElementClass$methods(click = function(){
   return(invisible())
 })
 
+# find element by and find elements by
+findNames <- c("ByClassName", "ByCssSelector", "ById",
+               "ByLinkText", "ByName", "ByPartialLinkText",
+               "ByTagName", "ByXPath")
+
+findNamesS <- paste("findElement", findNames, sep = "")
+resFun <- lapply(findNamesS, function(auxN){
+  bodyTxt <- paste("{webElement <- remoteWebElementClass$new(J(javaDriver, '", auxN, "', argName))
+                   return(webElement)}", sep = "")
+  auxFun <- function(argName){print(3)}
+  body(auxFun) <- {parse(text = bodyTxt)}
+  return(auxFun)
+  })
+names(resFun) <- findNamesS
+remoteWebElementClass$methods(resFun)
+
+findNamesP <- paste("findElements", findNames, sep = "")
+resFun <- lapply(findNamesP, function(auxN){
+  bodyTxt <- paste("{elements <- J(javaDriver, ", auxN,
+                   ", argName); elements <- as.list(elements)
+  elements <- lapply(elements, function(javaObject){
+    webElemAux <- remoteWebElementClass$new(javaObject)
+    return(webElemAux)
+  })
+  return(elements)}", sep = "")
+  auxFun <- function(argName){print(3)}
+  body(auxFun) <- {parse(text = bodyTxt)}
+  return(auxFun)
+})
+names(resFun) <- findNamesP
+remoteWebElementClass$methods(resFun)
+
+
 remoteWebElementClass$methods(getAttribute = function(stringName){
   return(J(javaWebElement, "getAttribute", stringName))
 })
 
 remoteWebElementClass$methods(getCssValue = function(stringName){
   return(J(javaWebElement, "getCssValue", stringName))
+})
+
+remoteWebElementClass$methods(getHtml = function(){
+  return(.self$getAttribute("innerHTML"))
 })
 
 remoteWebElementClass$methods(getId = function(){

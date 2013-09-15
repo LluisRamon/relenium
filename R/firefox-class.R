@@ -59,22 +59,38 @@ firefoxClass$methods(close = function(){
   return(invisible())
 })
 
-firefoxClass$methods(findElementsByXPath = function(xpath){
-  elements <- J(javaDriver, "findElementsByXPath", xpath)
-  elements <- as.list(elements)
-  
+  # find element by and find elements by
+findNames <- c("ByClassName", "ByCssSelector", "ById",
+               "ByLinkText", "ByName", "ByPartialLinkText",
+               "ByTagName", "ByXPath")
+
+findNamesS <- paste("findElement", findNames, sep = "")
+resFun <- lapply(findNamesS, function(auxN){
+  bodyTxt <- paste("{webElement <- remoteWebElementClass$new(J(javaDriver, '", auxN, "', argName))
+                   return(webElement)}", sep = "")
+  auxFun <- function(argName){print(3)}
+  body(auxFun) <- {parse(text = bodyTxt)}
+  return(auxFun)
+})
+names(resFun) <- findNamesS
+firefoxClass$methods(resFun)
+
+findNamesP <- paste("findElements", findNames, sep = "")
+resFun <- lapply(findNamesP, function(auxN){
+  bodyTxt <- paste("{elements <- J(javaDriver, ", auxN,
+  ", argName); elements <- as.list(elements)
   elements <- lapply(elements, function(javaObject){
     webElemAux <- remoteWebElementClass$new(javaObject)
     return(webElemAux)
   })
-  
-  return(elements)
+  return(elements)}", sep = "")
+  auxFun <- function(argName){print(3)}
+  body(auxFun) <- {parse(text = bodyTxt)}
+  return(auxFun)
 })
+names(resFun) <- findNamesP
+firefoxClass$methods(resFun)
 
-firefoxClass$methods(findElementByXPath = function(xpath){
-  webElement <- remoteWebElementClass$new(J(javaDriver, "findElementByXPath", xpath))
-  return(webElement)
-})
 
 firefoxClass$methods(forward = function(){
   javaNavigate$forward()
@@ -95,6 +111,9 @@ firefoxClass$methods(getCurrentUrl = function(){
   return(J(javaDriver, "getCurrentUrl"))
 })
 
+firefoxClass$methods(getPageSource = function(){
+  return(J(javaDriver, "getPageSource"))
+})
 
 firefoxClass$methods(refresh = function(){
   javaNavigate$refresh()
