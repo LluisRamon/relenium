@@ -1,4 +1,6 @@
 library(seleniumJars)
+require(devtools)
+# install_github("relenium", "LluisRamon")
 
 firefox <- firefoxClass$new()
 firefox$get("http://rugbcn.wordpress.com/")
