@@ -28,9 +28,11 @@ remoteWebElementClass$methods(initialize = function(javaObj, ...){
   javaKeys <<- javaKeysClass$new()
   keys <<- javaKeys$keysNames
 
-#   browser()
   if(javaWebElement$getTagName() == "select"){
-    javaSelect <<- new(J("org.openqa.selenium.support.ui.Select"), javaObj)
+    javaSelect <<- .self$tryExc(new(J("org.openqa.selenium.support.ui.Select"), javaObj))
+    if( is.null(javaSelect) ){
+      stop("select tag object creation failed")
+    }
   }else{
     javaSelect <<- NULL
   }
@@ -56,39 +58,39 @@ remoteWebElementClass$methods(initialize = function(javaObj, ...){
 })
 
 remoteWebElementClass$methods(clear = function(){
-  J(javaWebElement, "clear")
+  .self$tryExc(J(javaWebElement, "clear"))
   return(invisible())
 })
 
 remoteWebElementClass$methods(click = function(){
-  J(javaWebElement, "click")
+  .self$tryExc(J(javaWebElement, "click"))
   return(invisible())
 })
 
 remoteWebElementClass$methods(deselectAll = function(){
   if( !is.null( javaSelect) ){
-    J(javaSelect, "deselectAll")  
+    .self$tryExc(J(javaSelect, "deselectAll"))
   }
   return(invisible())
 })
 
 remoteWebElementClass$methods(deselectByIndex = function(ind){
   if( !is.null( javaSelect) ){
-    J(javaSelect, "deselectByIndex", ind)  
+    .self$tryExc(J(javaSelect, "deselectByIndex", ind))
   }
   return(invisible())
 })
 
 remoteWebElementClass$methods(deselectByValue = function(characterName){
   if( !is.null( javaSelect) ){
-    J(javaSelect, "deselectByValue", characterName)  
+    .self$tryExc(J(javaSelect, "deselectByValue", characterName))
   }
   return(invisible())
 })
 
 remoteWebElementClass$methods(deselectByVisibleText = function(characterName){
   if( !is.null( javaSelect) ){
-    J(javaSelect, "deselectByVisibleText", characterName)  
+    .self$tryExc(J(javaSelect, "deselectByVisibleText", characterName))
   }
   return(invisible())
 })
@@ -102,8 +104,15 @@ findNames <- c("ByClassName", "ByCssSelector", "ById",
 
 findNamesS <- paste("findElement", findNames, sep = "")
 resFun <- lapply(findNamesS, function(auxN){
-  bodyTxt <- paste("{webElement <- remoteWebElementClass$new(J(javaDriver, '", auxN, "', argName))
-                   return(webElement)}", sep = "")
+  bodyTxt <- paste("{
+    webElement <- .self$tryExc(J(javaDriver, '", auxN, "', argName))
+    if( !is.null(webElement) ){
+      webElement <- remoteWebElementClass$new(webElement)
+      return(webElement)
+    }else{
+      return(NULL)
+    }
+  }", sep = "")
   auxFun <- function(argName){print(3)}
   body(auxFun) <- {parse(text = bodyTxt)}
   return(auxFun)
@@ -113,13 +122,19 @@ remoteWebElementClass$methods(resFun)
 
 findNamesP <- paste("findElements", findNames, sep = "")
 resFun <- lapply(findNamesP, function(auxN){
-  bodyTxt <- paste("{elements <- J(javaDriver, ", auxN,
-                   ", argName); elements <- as.list(elements)
-  elements <- lapply(elements, function(javaObject){
-    webElemAux <- remoteWebElementClass$new(javaObject)
-    return(webElemAux)
-  })
-  return(elements)}", sep = "")
+  bodyTxt <- paste("{
+    elements <- .self$tryExc(J(javaDriver, ", auxN,", argName))
+    if( !is.null(elements) ){
+      elements <- as.list(elements)
+      elements <- lapply(elements, function(javaObject){
+        webElemAux <- remoteWebElementClass$new(javaObject)
+        return(webElemAux)
+      })
+      return(elements)
+    }else{
+      return(NULL)
+    }
+  }", sep = "")
   auxFun <- function(argName){print(3)}
   body(auxFun) <- {parse(text = bodyTxt)}
   return(auxFun)
@@ -135,31 +150,39 @@ rm(resFun)
 
 remoteWebElementClass$methods(getAllSelectedOptions = function(){
   if( !is.null( javaSelect) ){
-    elements <- J(javaSelect, "getAllSelectedOptions")  
-    elements <- as.list(elements)
-    elements <- lapply(elements, function(javaObject){
-      webElemAux <- remoteWebElementClass$new(javaObject)
-      return(webElemAux)
-    })
-    return(elements)
+    elements <- .self$tryExc(J(javaSelect, "getAllSelectedOptions"))
+    if( !is.null( elements ) ){
+      elements <- as.list(elements)
+      elements <- lapply(elements, function(javaObject){
+        webElemAux <- remoteWebElementClass$new(javaObject)
+        return(webElemAux)
+      })
+      return(elements)  
+    }else{
+      return(NULL)
+    }
   }else{
     return(invisible())  
   }
 })
 
 remoteWebElementClass$methods(getAttribute = function(stringName){
-  return(J(javaWebElement, "getAttribute", stringName))
+  return(.self$tryExc(J(javaWebElement, "getAttribute", stringName)))
 })
 
 remoteWebElementClass$methods(getCssValue = function(stringName){
-  return(J(javaWebElement, "getCssValue", stringName))
+  return(.self$tryExc(J(javaWebElement, "getCssValue", stringName)))
 })
 
 remoteWebElementClass$methods(getFirstSelectedOption = function(){
   if( !is.null( javaSelect) ){
-    element <- J(javaSelect, "getFirstSelectedOption")  
-    element <- remoteWebElementClass$new((element))
-    return(element)
+    element <- .self$tryExc(J(javaSelect, "getFirstSelectedOption"))
+    if( !is.null( element ) ){
+      element <- remoteWebElementClass$new((element))
+      return(element)  
+    }else{
+      return(NULL)
+    }
   }else{
     return(invisible())  
   }
@@ -170,69 +193,66 @@ remoteWebElementClass$methods(getHtml = function(){
 })
 
 remoteWebElementClass$methods(getId = function(){
-  return(J(javaWebElement, "getId"))
+  return(.self$tryExc(J(javaWebElement, "getId")))
 })
 
 remoteWebElementClass$methods(getOptions = function(){
   if( !is.null( javaSelect) ){
-    J(javaSelect, "getOptions")  
+    .self$tryExc(J(javaSelect, "getOptions"))
   }
   return(invisible())
 })
 
 
 remoteWebElementClass$methods(getSize = function(){
-  return(J(javaWebElement, "getSize"))
+  return(.self$tryExc(J(javaWebElement, "getSize")))
 })
 
 remoteWebElementClass$methods(getTagName = function(){
-  return(J(javaWebElement, "getTagName"))
+  return(.self$tryExc(J(javaWebElement, "getTagName")))
 })
 
 remoteWebElementClass$methods(getText = function(){
-  return(J(javaWebElement, "getText"))
+  return(.self$tryExc(J(javaWebElement, "getText")))
 })
 
 remoteWebElementClass$methods(isDisplayed = function(){
-  J(javaWebElement, "isDisplayed")
-  return(invisible())
+  return(.self$tryExc(J(javaWebElement, "isDisplayed")))
 })
 
 remoteWebElementClass$methods(isEnabled = function(){
-  J(javaWebElement, "isEnabled")
-  return(invisible())
+  return(.self$tryExc(J(javaWebElement, "isEnabled")))
 })
 
 remoteWebElementClass$methods(isMultiple = function(){
   if( !is.null( javaSelect) ){
-    J(javaSelect, "isMultiple")  
+    return(.self$tryExc(J(javaSelect, "isMultiple")))
   }
   return(invisible())
 })
 
 
 remoteWebElementClass$methods(isSelected = function(){
-  J(javaWebElement, "isSelected")
-  return(invisible())
+  return(.self$tryExc(J(javaWebElement, "isSelected")))
 })
 
 remoteWebElementClass$methods(selectByIndex = function(ind){
   if( !is.null( javaSelect) ){
-    J(javaSelect, "selectByIndex", ind)  
+    .self$tryExc(J(javaSelect, "selectByIndex", ind))
   }
   return(invisible())
 })
 
 remoteWebElementClass$methods(selectByValue = function(characterName){
   if( !is.null( javaSelect) ){
-    J(javaSelect, "selectByValue", characterName)  
+    .self$tryExc(J(javaSelect, "selectByValue", characterName))
   }
   return(invisible())
 })
 
 remoteWebElementClass$methods(selectByVisibleText = function(characterName){
   if( !is.null( javaSelect) ){
-    J(javaSelect, "selectByVisibleText", characterName)  
+    .self$tryExc(J(javaSelect, "selectByVisibleText", characterName))
   }
   return(invisible())
 })
@@ -241,16 +261,16 @@ remoteWebElementClass$methods(sendKeys = function(text = NULL, keys = NULL){
   
   if ( is.null(keys) ){
     textSearch <- .jarray( text )
-    J(javaWebElement, "sendKeys", textSearch)
+    .self$tryExc(J(javaWebElement, "sendKeys", textSearch))
   }else{
-    J(javaWebElement, "sendKeys", javaKeys$keysArray[[keys]])
+    .self$tryExc(J(javaWebElement, "sendKeys", javaKeys$keysArray[[keys]]))
   }
   
   return(invisible())
 })
 
 remoteWebElementClass$methods(submit = function(){
-  J(javaWebElement, "submit")
+  .self$tryExc(J(javaWebElement, "submit"))
   return(invisible())
 })
 

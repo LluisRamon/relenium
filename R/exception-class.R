@@ -1,5 +1,5 @@
 exceptionClass <- setRefClass("exceptionClass", fields = list(exceptionTable = "matrix",
-                                            javaWarMes = "character"))
+                                            javaWarMes = "ANY"))
 
 exceptionClass$methods(initialize=function(){
   auxData <- c("ElementNotVisibleException", "Thrown to indicate that although an element is present on the DOM, it is not visible, and so is not able to be interacted with.",

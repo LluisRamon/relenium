@@ -34,8 +34,8 @@ firefoxClass <- setRefClass("firefoxClass", fields = list(javaDriver = "ANY",
                                                           methodNames = "character"), contains ="exceptionClass")
 
 firefoxClass$methods(initialize = function(...){
-  javaDriver <<- .jnew("org.openqa.selenium.firefox.FirefoxDriver")
-  javaNavigate <<- javaDriver$navigate()
+  javaDriver <<- .self$tryExc(.jnew("org.openqa.selenium.firefox.FirefoxDriver"))
+  javaNavigate <<- .self$tryExc(javaDriver$navigate())
   
   # Method Names
   auxMeth <- c(exceptionClass$methods(), "initialize")
@@ -49,12 +49,12 @@ firefoxClass$methods(initialize = function(...){
 })
 
 firefoxClass$methods(back = function(){
-  javaNavigate$back()
+  .self$tryExc(javaNavigate$back())
   return(invisible())
 })
 
 firefoxClass$methods(close = function(){
-  J(javaDriver, "close")
+  .self$tryExc(J(javaDriver, "close"))
   return(invisible())
 })
 
@@ -65,8 +65,15 @@ findNames <- c("ByClassName", "ByCssSelector", "ById",
 
 findNamesS <- paste("findElement", findNames, sep = "")
 resFun <- lapply(findNamesS, function(auxN){
-  bodyTxt <- paste("{webElement <- remoteWebElementClass$new(J(javaDriver, '", auxN, "', argName))
-                   return(webElement)}", sep = "")
+  bodyTxt <- paste("{
+    webElement <- .self$tryExc(J(javaDriver, '", auxN, "', argName))
+    if( !is.null(webElement) ){
+      webElement <- remoteWebElementClass$new(webElement)
+      return(webElement)
+    }else{
+      return(NULL)
+    }
+  }", sep = "")
   auxFun <- function(argName){print(3)}
   body(auxFun) <- {parse(text = bodyTxt)}
   return(auxFun)
@@ -76,13 +83,19 @@ firefoxClass$methods(resFun)
 
 findNamesP <- paste("findElements", findNames, sep = "")
 resFun <- lapply(findNamesP, function(auxN){
-  bodyTxt <- paste("{elements <- J(javaDriver, ", auxN,
-  ", argName); elements <- as.list(elements)
-  elements <- lapply(elements, function(javaObject){
-    webElemAux <- remoteWebElementClass$new(javaObject)
-    return(webElemAux)
-  })
-  return(elements)}", sep = "")
+  bodyTxt <- paste("{
+    elements <- .self$tryExc(J(javaDriver, ", auxN, ", argName))
+    if( !is.null( elements ) ){
+      elements <- as.list(elements)
+      elements <- lapply(elements, function(javaObject){
+        webElemAux <- remoteWebElementClass$new(javaObject)
+        return(webElemAux)
+      })
+      return(elements)
+    }else{
+      return(NULL)
+    }
+  }", sep = "")
   auxFun <- function(argName){print(3)}
   body(auxFun) <- {parse(text = bodyTxt)}
   return(auxFun)
@@ -90,32 +103,35 @@ resFun <- lapply(findNamesP, function(auxN){
 names(resFun) <- findNamesP
 firefoxClass$methods(resFun)
 
+rm(findNames)
+rm(findNamesS)
+rm(findNamesP)
+rm(resFun)
 
 firefoxClass$methods(forward = function(){
-  javaNavigate$forward()
+  .self$tryExc(javaNavigate$forward())
   return(invisible())
 })
 
 firefoxClass$methods(get = function(url){
-  J(javaDriver, "get", url)
+  .self$tryExc(J(javaDriver, "get", url))
   return(invisible())
 })
 
 firefoxClass$methods(getTitle = function(){
-  title <- J(javaDriver, "getTitle")
-  return(title)
+  return(.self$tryExc(J(javaDriver, "getTitle")))
 })
 
 firefoxClass$methods(getCurrentUrl = function(){
-  return(J(javaDriver, "getCurrentUrl"))
+  return(.self$tryExc(J(javaDriver, "getCurrentUrl")))
 })
 
 firefoxClass$methods(getPageSource = function(){
-  return(J(javaDriver, "getPageSource"))
+  return(.self$tryExc(J(javaDriver, "getPageSource")))
 })
 
 firefoxClass$methods(refresh = function(){
-  javaNavigate$refresh()
+  .self$tryExc(javaNavigate$refresh())
   return(invisible())
 })
 
