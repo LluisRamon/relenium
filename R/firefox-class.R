@@ -31,15 +31,14 @@
 
 firefoxClass <- setRefClass("firefoxClass", fields = list(javaDriver = "ANY",
                                                           javaNavigate = "ANY",
-                                                          methodNames = "character"))
+                                                          methodNames = "character"), contains ="exceptionClass")
 
 firefoxClass$methods(initialize = function(...){
   javaDriver <<- .jnew("org.openqa.selenium.firefox.FirefoxDriver")
   javaNavigate <<- javaDriver$navigate()
   
   # Method Names
-  aux <- setRefClass("AuxRefClass")
-  auxMeth <- c(aux$methods(), "initialize")
+  auxMeth <- c(exceptionClass$methods(), "initialize")
   objMeth <- getRefClass(class(.self))$methods()
   ind <- sapply(objMeth, function(obj){
     !(obj %in% auxMeth)

@@ -20,7 +20,8 @@ remoteWebElementClass <- setRefClass("remoteWebElementClass", fields = list(java
                                                                             javaWebElement = "ANY",
                                                                             javaSelect = "ANY",
                                                                             keys = "character",
-                                                                            methodNames = "character"))
+                                                                            methodNames = "character"), 
+                                     contains = "exceptionClass")
 
 remoteWebElementClass$methods(initialize = function(javaObj, ...){
   javaWebElement <<- javaObj
@@ -40,8 +41,7 @@ remoteWebElementClass$methods(initialize = function(javaObj, ...){
                          "deselectByIndex", "deselectByVisibleText")
   
   # Method Names
-  aux <- setRefClass("AuxRefClass")
-  auxMeth <- c(aux$methods(), "initialize")
+  auxMeth <- c(exceptionClass$methods(), "initialize")
   objMeth <- getRefClass(class(.self))$methods()
   ind <- sapply(objMeth, function(obj){
     !(obj %in% auxMeth)
@@ -158,7 +158,7 @@ remoteWebElementClass$methods(getCssValue = function(stringName){
 remoteWebElementClass$methods(getFirstSelectedOption = function(){
   if( !is.null( javaSelect) ){
     element <- J(javaSelect, "getFirstSelectedOption")  
-    element <- remoteWebElementClass$new((element)
+    element <- remoteWebElementClass$new((element))
     return(element)
   }else{
     return(invisible())  
