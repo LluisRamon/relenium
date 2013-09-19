@@ -120,15 +120,5 @@ firefoxClass$methods(refresh = function(){
   return(invisible())
 })
 
-# firefoxClass$methods(show = function(){
-#   
-#   print("Html code")
-#   
-#   # Return with Rcurl html code. Maybe too slow. 
-#   
-#   return(invisible())
-#   
-# })
-
 .DollarNames.firefoxClass <- function(x, pattern)
   grep(pattern, x$methodNames, value=TRUE)
