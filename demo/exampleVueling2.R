@@ -23,3 +23,5 @@ remoteWebElement$sendKeys(keys = "ENTER")
 
 remoteWebElement <- firefox$findElementByXPath("//*[@id='AvailabilitySearchInputXmlSearchView_LinkButtonNewSearch']")
 remoteWebElement$sendKeys(keys = "ENTER")
+
+firefox$close()
