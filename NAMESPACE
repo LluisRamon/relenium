@@ -1,4 +1,6 @@
-export(firefox)
-export(webElement)
+export(firefoxClass)
+export(remoteWebElementClass)
+export(javaKeysClass)
+export(exceptionClass)
 import(rJava)
 import(seleniumJars)
