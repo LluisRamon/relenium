@@ -1,34 +1,3 @@
-#' firefox class
-#'
-#' This class is designed to represent a firefox navigator.
-#' 
-#' The firefox class is implemented as a reference class (see \code{\link{setRefClass}}
-#' for more details). 
-#'
-#' @param ... Additional argument list that might not ever used
-#' 
-#' @aliases firefox-class
-#' @aliases initialize firefox-method
-#' @aliases get firefox-method
-#' @aliases getTitle firefox-method
-#' @aliases findElementByXPath firefox-method
-#' @aliases findElementsByXPath firefox-method
-#' 
-#' @return open firefox 
-#' 
-#' @author Aleix Ruiz de Villa, Andreu Vall, Lluis Ramon
-#' @seealso \code{\link{webElement}}
-#' 
-#' @export
-#' 
-#' @examples
-#' 
-#' driver <- firefox$new()
-#' driver$get("https://github.com/LluisRamon/seleniumJars")
-#' driver$getTitle()
-#' driver$close()
-#'  
-
 firefoxClass <- setRefClass("firefoxClass", fields = list(javaDriver = "ANY",
                                                           javaNavigate = "ANY",
                                                           methodNames = "character"), contains ="exceptionClass")
