@@ -6,4 +6,6 @@ Date: 2013-07-05
 Author: Aleix Ruiz de Villa, Andreu Vall, Lluis Ramon
 Maintainer: Aleix Ruiz de Villa <aleix@somewhere.net>
 Description: relenium is a third party browser driver for Selenium. The main purpose of this package is making web scrapping easier and powerful.
+BugReports: https://github.com/LluisRamon/relenium/issues
+URL: http://lluisramon.github.io/relenium/
 License: GPL-3
