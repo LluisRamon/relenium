@@ -4,11 +4,16 @@
 \alias{firefox}
 \alias{firefoxClass}
 
+\alias{initialize, firefoxClass-method}
+\alias{close, firefoxClass-method}
+\alias{forward, firefoxClass-method}
+\alias{back, firefoxClass-method}
+
 \alias{get, firefoxClass-method}
 \alias{getTitle, firefoxClass-method}
 \alias{getCurrentUrl, firefoxClass-method}
 \alias{getPageSource, firefoxClass-method}
-\alias{initialize, firefoxClass-method}
+
 \alias{findElementByXPath, firefoxClass-method}
 \alias{findElementsByXPath, firefoxClass-method}
 \alias{findElementByClassName, firefoxClass-method}
@@ -46,11 +51,15 @@
 
 \section{Methods}{
   \describe{
+  
+     \item{\code{initialize}:}{TODO}
+     \item{\code{close}:}{TODO}
+     \item{\code{forward}:}{TODO}
+     \item{\code{back}:}{TODO}
      \item{\code{get}:}{TODO}
      \item{\code{getTitle}:}{TODO}
      \item{\code{getCurrentUrl}:}{TODO}
      \item{\code{getPageSource}:}{TODO}
-     \item{\code{initialize}:}{TODO}
      \item{\code{findElementByXPath}:}{TODO}
      \item{\code{findElementsByXPath}:}{TODO}
      \item{\code{findElementByClassName}:}{TODO}
