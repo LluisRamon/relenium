@@ -5,6 +5,21 @@
 \alias{firefoxClass}
 \alias{findElementByXPath, firefoxClass-method}
 \alias{findElementsByXPath, firefoxClass-method}
+\alias{findElementByClassName, firefoxClass-method}
+\alias{findElementByName, firefoxClass-method}
+\alias{findElementByCssSelector, firefoxClass-method}
+\alias{findElementById, firefoxClass-method}
+\alias{findElementByLinkText, firefoxClass-method}
+\alias{findElementByPartialLinkText, firefoxClass-method}
+\alias{findElementByTagName, firefoxClass-method}
+\alias{findElementsByClassName, firefoxClass-method}
+\alias{findElementsByCssSelector, firefoxClass-method}
+\alias{findElementsById, firefoxClass-method}
+\alias{findElementsByLinkText, firefoxClass-method}
+\alias{findElementsByName, firefoxClass-method}
+\alias{findElementsByPartialLinkText, firefoxClass-method}
+\alias{findElementsByTagName, firefoxClass-method}
+
 \alias{get, firefoxClass-method}
 \alias{getTitle, firefoxClass-method}
 \alias{initialize, firefoxClass-method}
@@ -28,11 +43,26 @@
 
 \section{Methods}{
   \describe{
-     \item{\code{findElementByXPath}:}{TODO}
-     \item{\code{findElementsByXPath}:}{TODO}
      \item{\code{get}:}{TODO}
      \item{\code{getTitle}:}{TODO}
      \item{\code{initialize}:}{TODO}
+     \item{\code{findElementByXPath}:}{TODO}
+     \item{\code{findElementsByXPath}:}{TODO}
+     \item{\code{findElementByClassName}:}{TODO}
+     \item{\code{findElementByCssSelector}:}{TODO}
+     \item{\code{findElementById}:}{TODO}
+     \item{\code{findElementByLinkText}:}{TODO}
+     \item{\code{findElementByName}:}{TODO}
+     \item{\code{findElementByPartialLinkText}:}{TODO}
+     \item{\code{findElementByTagName}:}{TODO}
+     \item{\code{findElementsByClassName}:}{TODO}
+     \item{\code{findElementsByCssSelector}:}{TODO}
+     \item{\code{findElementsById}:}{TODO}
+     \item{\code{findElementByPartialLinkText}:}{TODO}
+     \item{\code{findElementsByLinkText}:}{TODO}
+     \item{\code{findElementsByName}:}{TODO}
+     \item{\code{findElementsByPartialLinkText}:}{TODO}
+     \item{\code{findElementsByTagName}:}{TODO}
   }
 }
 
