@@ -3,6 +3,12 @@
 
 \alias{firefox}
 \alias{firefoxClass}
+
+\alias{get, firefoxClass-method}
+\alias{getTitle, firefoxClass-method}
+\alias{getCurrentUrl, firefoxClass-method}
+\alias{getPageSource, firefoxClass-method}
+\alias{initialize, firefoxClass-method}
 \alias{findElementByXPath, firefoxClass-method}
 \alias{findElementsByXPath, firefoxClass-method}
 \alias{findElementByClassName, firefoxClass-method}
@@ -20,9 +26,6 @@
 \alias{findElementsByPartialLinkText, firefoxClass-method}
 \alias{findElementsByTagName, firefoxClass-method}
 
-\alias{get, firefoxClass-method}
-\alias{getTitle, firefoxClass-method}
-\alias{initialize, firefoxClass-method}
 
 \title{Class "firefoxClass". A class to represent firefox web browser}
 \description{
@@ -45,6 +48,8 @@
   \describe{
      \item{\code{get}:}{TODO}
      \item{\code{getTitle}:}{TODO}
+     \item{\code{getCurrentUrl}:}{TODO}
+     \item{\code{getPageSource}:}{TODO}
      \item{\code{initialize}:}{TODO}
      \item{\code{findElementByXPath}:}{TODO}
      \item{\code{findElementsByXPath}:}{TODO}
