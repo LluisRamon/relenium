@@ -24,6 +24,10 @@ require(devtools)
 install_github('seleniumJars', 'LluisRamon')
 ```
 
+In case you are using Windows you will also need [rtools][].
+
+[rtools]: http://cran.r-project.org/bin/windows/Rtools/
+
 ## Bugs and new features
 
 To report technical problems with relenium, please file an issue on [Github][] with a [short reproducible example][]. Feedback is welcomed and any new features should be filed as issues as well.
@@ -38,3 +42,4 @@ To report technical problems with relenium, please file an issue on [Github][] w
 [rJava]: http://cran.r-project.org/web/packages/rJava/index.html
 [Github]: https://github.com/LluisRamon/relenium/issues
 [short reproducible example]: http://adv-r.had.co.nz/Reproducibility.html
+[rtools]: http://cran.r-project.org/bin/windows/Rtools/
