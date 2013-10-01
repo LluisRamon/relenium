@@ -1,10 +1,11 @@
-# relenium
+## Introduction
 
-relenium is a third party browser driver for Selenium. The main purpose of this package is making web scraping easier and powerful.
+[Selenium][] is a popular suite of tools specifically for automating web browsers. Selenium allows users to write tests in a number of popular programming languages including Java. The __relenium package__ is intended to provide access to Selenium and use it for easy and powerful web scraping.
 
 ## Development
 
-relenium is in alpha testing. Some errors could be found and documentation is still very poor.
+Some members of the [Barcelona R user group], (Aleix Ruiz de Villa, Andreu Vall and Lluis Ramon) are developing relenium. Right now, relenium is in alpha testing. Some errors could be found and documentation is still very poor.
+
 
 ## Installation
 
@@ -32,9 +33,6 @@ In case you are using Windows you will also need [rtools][].
 
 To report technical problems with relenium, please file an issue on [Github][] with a [short reproducible example][]. Feedback is welcomed and any new features should be filed as issues as well.
 
-## Selenium
-
-[Selenium] is a portable software testing framework for web applications. Some members of the [Barcelona R user group], (Aleix Ruiz de Villa, Andreu Vall and Lluis Ramon) are developing a selenium package for the R programming language. Our aim is to use it for web scraping directly from R. 
 
 [Barcelona R user group]: http://rugbcn.wordpress.com/
 [Selenium]: http://docs.seleniumhq.org/
