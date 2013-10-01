@@ -1,4 +1,6 @@
 export(firefoxClass)
 export(remoteWebElementClass)
+export(.DollarNames.firefoxClass)
+export(.DollarNames.remoteWebElementClass)
 import(rJava)
 import(seleniumJars)
