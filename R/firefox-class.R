@@ -1,18 +1,10 @@
 firefoxClass <- setRefClass("firefoxClass", fields = list(javaDriver = "ANY",
-                                                          javaNavigate = "ANY",
-                                                          methodNames = "character"), contains ="exceptionClass")
+                                                          javaNavigate = "ANY"),
+                            contains ="exceptionClass")
 
 firefoxClass$methods(initialize = function(...){
   javaDriver <<- .self$tryExc(.jnew("org.openqa.selenium.firefox.FirefoxDriver"))
   javaNavigate <<- .self$tryExc(javaDriver$navigate())
-  
-  # Method Names
-  auxMeth <- c(exceptionClass$methods(), "initialize")
-  objMeth <- getRefClass(class(.self))$methods()
-  ind <- sapply(objMeth, function(obj){
-    !(obj %in% auxMeth)
-  })
-  methodNames <<- objMeth[ind]
   
   callSuper(...)
 })
@@ -104,5 +96,14 @@ firefoxClass$methods(refresh = function(){
   return(invisible())
 })
 
-.DollarNames.firefoxClass <- function(x, pattern)
-  grep(pattern, x$methodNames, value=TRUE)
+.DollarNames.firefoxClass <- function(x, pattern){
+
+  auxMeth <- c(exceptionClass$methods(), "initialize")
+  objMeth <- getRefClass(class(x))$methods()
+  ind <- sapply(objMeth, function(obj){
+    !(obj %in% auxMeth)
+  })
+  methodNames <- objMeth[ind]
+
+  grep(pattern, methodNames, value=TRUE)
+}

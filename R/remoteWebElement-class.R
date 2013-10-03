@@ -1,8 +1,7 @@
 remoteWebElementClass <- setRefClass("remoteWebElementClass", fields = list(javaKeys = "javaKeysClass", 
                                                                             javaWebElement = "ANY",
                                                                             javaSelect = "ANY",
-                                                                            keys = "character",
-                                                                            methodNames = "character"), 
+                                                                            keys = "character"), 
                                      contains = "exceptionClass")
 
 remoteWebElementClass$methods(initialize = function(javaObj, ...){
@@ -17,23 +16,6 @@ remoteWebElementClass$methods(initialize = function(javaObj, ...){
     }
   }else{
     javaSelect <<- NULL
-  }
-  javaSelectMethods <- c("isMultiple", "getOptions", "deselectAll",
-                         "getAllSelectedOptions", "getFirstSelectedOption",
-                         "selectByVisibleText", "selectByIndex", 
-                         "selectByValue", "deselectByValue", 
-                         "deselectByIndex", "deselectByVisibleText")
-  
-  # Method Names
-  auxMeth <- c(exceptionClass$methods(), "initialize")
-  objMeth <- getRefClass(class(.self))$methods()
-  ind <- sapply(objMeth, function(obj){
-    !(obj %in% auxMeth)
-  })
-  methodNames <<- c(objMeth[ind], "keys")
-  
-  if( !is.null(javaSelect) ){
-    methodNames <<- c(methodNames, javaSelectMethods)  
   }
   
   callSuper(...)
@@ -257,5 +239,23 @@ remoteWebElementClass$methods(submit = function(){
 })
 
 
-.DollarNames.remoteWebElementClass <- function(x, pattern)
-  grep(pattern, x$methodNames, value=TRUE)
+.DollarNames.remoteWebElementClass <- function(x, pattern){
+
+  auxMeth <- c(exceptionClass$methods(), "initialize")
+  objMeth <- getRefClass(class(x))$methods()
+  ind <- sapply(objMeth, function(obj){
+    !(obj %in% auxMeth)
+  })
+  methodNames <- c(objMeth[ind], "keys")
+  
+  if( !is.null(x$javaSelect) ){
+    javaSelectMethods <- c("isMultiple", "getOptions", "deselectAll",
+                           "getAllSelectedOptions", "getFirstSelectedOption",
+                           "selectByVisibleText", "selectByIndex", 
+                           "selectByValue", "deselectByValue", 
+                           "deselectByIndex", "deselectByVisibleText")
+    methodNames <- c(methodNames, javaSelectMethods)  
+  }
+
+  grep(pattern, methodNames, value=TRUE)
+}
