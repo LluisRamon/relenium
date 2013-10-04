@@ -68,16 +68,6 @@
   (see \code{\link{setRefClass}} for more details).
 }
 
-\section{Fields}{
-  \describe{
-     \item{\code{javaKeys}:}{TODO}
-     \item{\code{javaWebElement}:}{TODO}
-     \item{\code{javaSelect}:}{TODO}
-     \item{\code{keys}:}{TODO}
-     \item{\code{methodNames}:}{TODO}
-  }
-}
-
 \section{Methods}{
   \describe{
   
@@ -87,22 +77,6 @@
      \item{\code{deselectByIndex}:}{TODO} 
      \item{\code{deselectByValue}:}{TODO} 
      \item{\code{deselectByVisibleText}:}{TODO} 
-     \item{\code{findElementByClassName}:}{TODO} 
-     \item{\code{findElementByCssSelector}:}{TODO} 
-     \item{\code{findElementById}:}{TODO} 
-     \item{\code{findElementByLinkText}:}{TODO} 
-     \item{\code{findElementByName}:}{TODO} 
-     \item{\code{findElementByPartialLinkText}:}{TODO} 
-     \item{\code{findElementByTagName}:}{TODO} 
-     \item{\code{findElementByXPath}:}{TODO} 
-     \item{\code{findElementsByClassName}:}{TODO} 
-     \item{\code{findElementsByCssSelector}:}{TODO} 
-     \item{\code{findElementsById}:}{TODO} 
-     \item{\code{findElementsByLinkText}:}{TODO} 
-     \item{\code{findElementsByName}:}{TODO} 
-     \item{\code{findElementsByPartialLinkText}:}{TODO} 
-     \item{\code{findElementsByTagName}:}{TODO} 
-     \item{\code{findElementsByXPath}:}{TODO} 
      \item{\code{getAllSelectedOptions}:}{TODO} 
      \item{\code{getAttribute}:}{TODO} 
      \item{\code{getCssValue}:}{TODO} 
@@ -136,7 +110,41 @@
      \item{\code{deselectByIndex}:}{TODO} 
      \item{\code{deselectByVisibleText}:}{TODO} 
      
-  } 
+  }
+  
+    \subsection{Locating elements}{
+  
+    There are diferent methods to find a single element in a page:
+    % Java Doc http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/By.html
+   
+    \describe{
+   
+     \item{\code{findElementByXPath}:}{Use this method when you know the \emph{xpath} of an element. With this strategy, the first element matching the \emph{xpath} will be returned.}
+     \item{\code{findElementByClassName}:}{Use this method when you know \emph{class} attribute of an element. With this strategy, the first element with the \emph{class} attribute value matching the location will be returned.}
+     \item{\code{findElementByCssSelector}:}{TODO (the driver's underlying W3 Selector engine)}
+     \item{\code{findElementById}:}{Use this method when you know \emph{id} attribute of an element. With this strategy, the first element with the \emph{id} attribute value matching the location will be returned.}
+     \item{\code{findElementByName}:}{Use this method when you know the \emph{name} attribute of an element. With this strategy, the first element with the \emph{name} attribute value matching the location will be returned.}
+     \item{\code{findElementByLinkText}:}{Use this method when you know \emph{text} of an element. With this strategy, the first element matching the \emph{exact text} will be returned.}    
+     \item{\code{findElementByPartialLinkText}:}{Use this method when you know \emph{text} of an element. With this strategy, the first element matching the \emph{partial text} will be returned.}
+     \item{\code{findElementByTagName}:}{Use this method when you know the \emph{tag name} of an element. With this strategy, the first element matching the \emph{tag name} will be returned.}
+   
+  }
+  
+  To find multiple elements use the following methods in the same way as the previous ones. Note that these methods will return a list.
+   
+    \itemize{
+         \item{findElementsByXPath}
+         \item{findElementsByClassName}
+         \item{findElementsByCssSelector}
+         \item{findElementsById}
+         \item{findElementByPartialLinkText}
+         \item{findElementsByLinkText}
+         \item{findElementsByName}
+         \item{findElementsByPartialLinkText}
+         \item{findElementsByTagName}
+    }
+    }
+ 
 }
 
 \author{
