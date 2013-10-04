@@ -71,16 +71,11 @@
 \section{Methods}{
   \describe{
   
+
      \item{\code{clear}:}{TODO} 
      \item{\code{click}:}{TODO} 
-     \item{\code{deselectAll}:}{TODO} 
-     \item{\code{deselectByIndex}:}{TODO} 
-     \item{\code{deselectByValue}:}{TODO} 
-     \item{\code{deselectByVisibleText}:}{TODO} 
-     \item{\code{getAllSelectedOptions}:}{TODO} 
      \item{\code{getAttribute}:}{TODO} 
      \item{\code{getCssValue}:}{TODO} 
-     \item{\code{getFirstSelectedOption}:}{TODO} 
      \item{\code{getHtml}:}{TODO} 
      \item{\code{getId}:}{TODO} 
      \item{\code{getOptions}:}{TODO} 
@@ -90,28 +85,33 @@
      \item{\code{initialize}:}{TODO} 
      \item{\code{isDisplayed}:}{TODO} 
      \item{\code{isEnabled}:}{TODO} 
-     \item{\code{isMultiple}:}{TODO} 
-     \item{\code{isSelected}:}{TODO} 
-     \item{\code{selectByIndex}:}{TODO} 
-     \item{\code{selectByValue}:}{TODO} 
-     \item{\code{selectByVisibleText}:}{TODO} 
      \item{\code{sendKeys}:}{TODO} 
      \item{\code{submit}:}{TODO} 
      \item{\code{keys}:}{TODO} 
-     \item{\code{isMultiple}:}{TODO} 
-     \item{\code{getOptions}:}{TODO} 
-     \item{\code{deselectAll}:}{TODO} 
-     \item{\code{getAllSelectedOptions}:}{TODO} 
-     \item{\code{getFirstSelectedOption}:}{TODO} 
-     \item{\code{selectByVisibleText}:}{TODO} 
-     \item{\code{selectByIndex}:}{TODO} 
-     \item{\code{selectByValue}:}{TODO} 
-     \item{\code{deselectByValue}:}{TODO} 
-     \item{\code{deselectByIndex}:}{TODO} 
-     \item{\code{deselectByVisibleText}:}{TODO} 
+
      
   }
   
+    \subsection{Select methods}{
+      % select and Deselect java doc shttp://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/support/ui/Select.html
+     \describe{
+     
+       \item{\code{isSelected}:}{Determine whether or not this element is selected or not. This operation only applies to input elements such as checkboxes, options in a select and radio buttons. It returns True if the element is currently selected or checked, false otherwise.} 
+       \item{\code{isMultiple}:}{Whether this select element support selecting multiple options at the same time? This is done by checking the value of the "multiple" attribute.} 
+       \item{\code{getOptions}:}{Use this method to get all options belonging to this select tag}
+       \item{\code{getAllSelectedOptions}:}{All selected options belonging to this select tag} 
+       \item{\code{getFirstSelectedOption}:}{he first selected option in this select tag (or the currently selected option in a normal select)} 
+       \item{\code{selectByVisibleText}:}{Select all options that display text matching the argument. That is, when given "Bar" this would select an option like: <option value="foo">Bar</option>}    
+       \item{\code{selectByIndex}:}{Select the option at the given index. This is done by examing the "index" attribute of an element, and not merely by counting.} 
+       \item{\code{selectByValue}:}{Select all options that have a value matching the argument. That is, when given "foo" this would select an option like: <option value="foo">Bar</option>} 
+       \item{\code{deselectAll}:}{Clear all selected entries. This is only valid when the SELECT supports multiple selections.} 
+       \item{\code{deselectByIndex}:}{Deselect the option at the given index. This is done by examing the "index" attribute of an element, and not merely by counting.} 
+       \item{\code{deselectByValue}:}{Deselect all options that have a value matching the argument. That is, when given "foo" this would deselect an option like: <option value="foo">Bar</option>} 
+       \item{\code{deselectByVisibleText}:}{Deselect all options that display text matching the argument. That is, when given "Bar" this would deselect an option like: <option value="foo">Bar</option>} 
+
+    }
+   }
+   
     \subsection{Locating elements}{
   
     There are diferent methods to find a single element in a page:
