@@ -41,43 +41,58 @@
   (see \code{\link{setRefClass}} for more details).
 }
 
-\section{Fields}{
-  \describe{
-     \item{\code{javaDriver}:}{TODO}
-     \item{\code{javaNavigate}:}{TODO}
-     \item{\code{methodNames}:}{TODO}
-  }
-}
-
 \section{Methods}{
-  \describe{
-  
-     \item{\code{initialize}:}{TODO}
-     \item{\code{close}:}{TODO}
-     \item{\code{forward}:}{TODO}
-     \item{\code{back}:}{TODO}
-     \item{\code{get}:}{TODO}
-     \item{\code{getTitle}:}{TODO}
-     \item{\code{getCurrentUrl}:}{TODO}
-     \item{\code{getPageSource}:}{TODO}
-     \item{\code{findElementByXPath}:}{TODO}
-     \item{\code{findElementsByXPath}:}{TODO}
-     \item{\code{findElementByClassName}:}{TODO}
-     \item{\code{findElementByCssSelector}:}{TODO}
-     \item{\code{findElementById}:}{TODO}
-     \item{\code{findElementByLinkText}:}{TODO}
-     \item{\code{findElementByName}:}{TODO}
-     \item{\code{findElementByPartialLinkText}:}{TODO}
-     \item{\code{findElementByTagName}:}{TODO}
-     \item{\code{findElementsByClassName}:}{TODO}
-     \item{\code{findElementsByCssSelector}:}{TODO}
-     \item{\code{findElementsById}:}{TODO}
-     \item{\code{findElementByPartialLinkText}:}{TODO}
-     \item{\code{findElementsByLinkText}:}{TODO}
-     \item{\code{findElementsByName}:}{TODO}
-     \item{\code{findElementsByPartialLinkText}:}{TODO}
-     \item{\code{findElementsByTagName}:}{TODO}
+
+  \subsection{Navigate elements}{
+ 
+      \describe{
+
+           \item{\code{get}:}{Use this method to load a new web page in the current browser window.}
+           \item{\code{getTitle}:}{Use this method to get the title of the current page, with leading and trailing whitespace stripped, or null if one is not already set.}
+           \item{\code{getCurrentUrl}:}{Use this method to get a string representing the current URL that the browser is looking at.}
+           \item{\code{getPageSource}:}{Use this method to get the source of the last loaded page.}
+           \item{\code{forward}:}{Use this method to move a single "item" forward in the browser's history. Does nothing if we are on the latest page viewed.}
+           \item{\code{back}:}{Use this method to move back a single "item" in the browser's history.}
+           \item{\code{close}:}{Use this method to close the Firefox browser.}
+      }
+      % Thre documentation links
+      % http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/WebDriver.html#getPageSource%28%29
+      % http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/WebDriver.Navigation.html
+      % http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/remote/RemoteWebDriver.html
+ 
   }
+
+  \subsection{Locating elements}{
+  
+    There are diferent methods to find a single element in a page:
+    % Java Doc http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/By.html
+   
+    \describe{
+   
+     \item{\code{findElementByXPath}:}{Use this method when you know the \emph{xpath} of an element. With this strategy, the first element matching the \emph{xpath} will be returned.}
+     \item{\code{findElementByClassName}:}{Use this method when you know \emph{class} attribute of an element. With this strategy, the first element with the \emph{class} attribute value matching the location will be returned.}
+     \item{\code{findElementByCssSelector}:}{TODO (the driver's underlying W3 Selector engine)}
+     \item{\code{findElementById}:}{Use this method when you know \emph{id} attribute of an element. With this strategy, the first element with the \emph{id} attribute value matching the location will be returned.}
+     \item{\code{findElementByName}:}{Use this method when you know the \emph{name} attribute of an element. With this strategy, the first element with the \emph{name} attribute value matching the location will be returned.}
+     \item{\code{findElementByLinkText}:}{Use this method when you know \emph{text} of an element. With this strategy, the first element matching the \emph{exact text} will be returned.}    
+     \item{\code{findElementByPartialLinkText}:}{Use this method when you know \emph{text} of an element. With this strategy, the first element matching the \emph{partial text} will be returned.}
+     \item{\code{findElementByTagName}:}{Use this method when you know the \emph{tag name} of an element. With this strategy, the first element matching the \emph{tag name} will be returned.}
+   
+  }}
+      To find multiple elements use the following methods in the same way as the previous ones. Note that these methods will return a list.
+   
+    \itemize{
+         \item{findElementsByXPath}
+         \item{findElementsByClassName}
+         \item{findElementsByCssSelector}
+         \item{findElementsById}
+         \item{findElementByPartialLinkText}
+         \item{findElementsByLinkText}
+         \item{findElementsByName}
+         \item{findElementsByPartialLinkText}
+         \item{findElementsByTagName}
+    }
+ 
 }
 
 \examples{
