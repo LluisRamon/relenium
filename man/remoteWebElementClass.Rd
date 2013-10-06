@@ -68,35 +68,38 @@
   (see \code{\link{setRefClass}} for more details).
 }
 
+\section{Fields}{
+  \describe{
+     \item{\code{keys}:}{This is a list of the available keys that can be used in the 'sendKeys' method. They refer to keys of the keyboard.}
+  }
+}
+
 \section{Methods}{
   \describe{
   
 
-     \item{\code{clear}:}{TODO} 
-     \item{\code{click}:}{TODO} 
-     \item{\code{getAttribute}:}{TODO} 
-     \item{\code{getCssValue}:}{TODO} 
-     \item{\code{getHtml}:}{TODO} 
-     \item{\code{getId}:}{TODO} 
-     \item{\code{getOptions}:}{TODO} 
-     \item{\code{getSize}:}{TODO} 
-     \item{\code{getTagName}:}{TODO} 
-     \item{\code{getText}:}{TODO} 
-     \item{\code{initialize}:}{TODO} 
-     \item{\code{isDisplayed}:}{TODO} 
-     \item{\code{isEnabled}:}{TODO} 
-     \item{\code{sendKeys}:}{TODO} 
-     \item{\code{submit}:}{TODO} 
-     \item{\code{keys}:}{TODO} 
+     \item{\code{clear}:}{If this element is a text entry element, this will clear the value.} 
+     \item{\code{click}:}{Click this element.} 
+     \item{\code{getAttribute}:}{Get the value of a the given attribute of the element.} 
+     \item{\code{getCssValue}:}{Get the value of a given CSS property.} 
+     \item{\code{getHtml}:}{Get the inner html code of this element.} 
+     \item{\code{getId}:}{Get the id of this element.} 
+     \item{\code{getSize}:}{What is the width and height of the rendered element?} 
+     \item{\code{getTagName}:}{Get the tag name of this element.} 
+     \item{\code{getText}:}{Get the visible text} 
+     \item{\code{isDisplayed}:}{Is this element displayed or not?} 
+     \item{\code{isEnabled}:}{Is the element currently enabled or not? This will generally return true for everything but disabled input elements}
+     \item{\code{isSelected}:}{Determine whether or not this element is selected or not. This operation only applies to input elements such as checkboxes, options in a select and radio buttons. It returns True if the element is currently selected or checked, false otherwise.} 
+     \item{\code{sendKeys}:}{Use this method to simulate typing into an element, which may set its value.} 
+     \item{\code{submit}:}{If this current element is a form, or an element within a form, then this will be submitted to the remote server.} 
 
      
   }
   
     \subsection{Select methods}{
       % select and Deselect java doc shttp://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/support/ui/Select.html
+      These apply to web elements with tag 'select'.
      \describe{
-     
-       \item{\code{isSelected}:}{Determine whether or not this element is selected or not. This operation only applies to input elements such as checkboxes, options in a select and radio buttons. It returns True if the element is currently selected or checked, false otherwise.} 
        \item{\code{isMultiple}:}{Whether this select element support selecting multiple options at the same time? This is done by checking the value of the "multiple" attribute.} 
        \item{\code{getOptions}:}{Use this method to get all options belonging to this select tag}
        \item{\code{getAllSelectedOptions}:}{All selected options belonging to this select tag} 
