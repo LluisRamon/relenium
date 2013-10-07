@@ -43,7 +43,7 @@
 
 \section{Methods}{
 
-  \subsection{Navigate elements}{
+  \subsection{Navigating elements}{
  
       \describe{
 

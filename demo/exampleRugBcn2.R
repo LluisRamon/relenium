@@ -6,7 +6,9 @@ firefox <- firefoxClass$new()
 firefox$get("http://rugbcn.wordpress.com/")
 
 remoteWebElement <- firefox$findElementById("searchform")
+# keys that can be used in the sendkeys function
 remoteWebElement$keys
+# inner html code of the element
 remoteWebElement$getHtml()
 
 remoteWebElement <- firefox$findElementByXPath("//*[@id='s']")
