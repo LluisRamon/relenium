@@ -9,6 +9,9 @@ remoteWebElementClass$methods(initialize = function(javaObj, ...){
   javaKeys <<- javaKeysClass$new()
   keys <<- javaKeys$keysNames
 
+#   javaWebElement$execute()
+#   javaWebElement$execute("return arguments[0].attributes);")
+  browser()
   if(javaWebElement$getTagName() == "select"){
     javaSelect <<- .self$tryExc(new(J("org.openqa.selenium.support.ui.Select"), javaObj))
     if( is.null(javaSelect) ){
@@ -233,6 +236,11 @@ remoteWebElementClass$methods(sendKeys = function(text = NULL, keys = NULL){
   return(invisible())
 })
 
+remoteWebElementClass$methods(show = function(){
+  print("Web element. Object from class remoteWebElement.")
+  
+})
+
 remoteWebElementClass$methods(submit = function(){
   .self$tryExc(J(javaWebElement, "submit"))
   return(invisible())
@@ -241,21 +249,21 @@ remoteWebElementClass$methods(submit = function(){
 
 .DollarNames.remoteWebElementClass <- function(x, pattern){
 
-  auxMeth <- c(exceptionClass$methods(), "initialize")
+  auxMeth <- c(exceptionClass$methods(), "initialize", "show#envRefClass", "initialize#exceptionClass")
   objMeth <- getRefClass(class(x))$methods()
-  ind <- sapply(objMeth, function(obj){
-    !(obj %in% auxMeth)
-  })
-  methodNames <- c(objMeth[ind], "keys")
-  
-  if( !is.null(x$javaSelect) ){
+  if( is.null(x$javaSelect) ){
     javaSelectMethods <- c("isMultiple", "getOptions", "deselectAll",
                            "getAllSelectedOptions", "getFirstSelectedOption",
                            "selectByVisibleText", "selectByIndex", 
                            "selectByValue", "deselectByValue", 
                            "deselectByIndex", "deselectByVisibleText")
-    methodNames <- c(methodNames, javaSelectMethods)  
+    auxMeth <- c(auxMeth, javaSelectMethods)
   }
-
+  
+  ind <- sapply(objMeth, function(obj){
+    !(obj %in% auxMeth)
+  })
+  methodNames <- c(objMeth[ind], "keys")
+  
   grep(pattern, methodNames, value=TRUE)
 }

@@ -97,10 +97,12 @@
 
 \examples{
   \dontrun{
-    driver <- firefox$new()
-    driver$get("https://github.com/LluisRamon/seleniumJars")
-    driver$getTitle()
-    driver$close()
+    require(relenium)
+
+    firefox <- firefoxClass$new()
+    firefox$get("https://github.com/LluisRamon/relenium")
+    firefox$getTitle()
+    firefox$close()
   }
 }
 \author{

@@ -96,9 +96,19 @@ firefoxClass$methods(refresh = function(){
   return(invisible())
 })
 
+firefoxClass$methods(show = function(){
+  print("Firefox web driver. Object from class firefoxClass.")
+  print("Current page:")
+  print(.self$getCurrentUrl())
+  print("Page title:")
+  print(.self$getTitle())
+  
+  return()
+})
+
 .DollarNames.firefoxClass <- function(x, pattern){
 
-  auxMeth <- c(exceptionClass$methods(), "initialize")
+  auxMeth <- c(exceptionClass$methods(), "initialize", "show#envRefClass", "initialize#exceptionClass")
   objMeth <- getRefClass(class(x))$methods()
   ind <- sapply(objMeth, function(obj){
     !(obj %in% auxMeth)
