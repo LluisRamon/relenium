@@ -59,13 +59,25 @@
 \alias{deselectByIndex, remoteWebElementClass-method} 
 \alias{deselectByVisibleText, remoteWebElementClass-method} 
 
-\title{Class "remoteWebElementClass". A class to represent a remote web element}
+\title{Class  \code{remoteWebElementClass}. A class to represent a remote web element}
+
 \description{
-  This class is designed to represent a remote web element.
+  This class is designed to represent and interact with a remote web element.
 }
+
 \details{
+
   The remoteWebElement class is implemented as a reference class
-  (see \code{\link{setRefClass}} for more details).
+  (see \code{\link{setRefClass}} for more details). This class is designed to represent and interact with a remote web element.
+ 
+  It represents an HTML element. Generally, all interesting operations to do with interacting with a page will be performed through this interface.
+ 
+  You get a \code{remoteWebElementClass} from \code{\link{firefoxClass}} find methods or from other \code{remoteWebElementClass}. With this class you can navigate, select, web data extraction and find web elements.
+ 
+    All methods implemented are explained below. Documentation is based in the original Selinum Java documentation. It is possible to access the methods with TAB completion.
+   
+  An example of \code{remoteWebElementClass} can be found using \code{demo(package = "relenium")}.
+  
 }
 
 \section{Fields}{
@@ -75,7 +87,10 @@
 }
 
 \section{Methods}{
-  \describe{
+
+  \subsection{Navigate and web data extraction}{
+    
+    \describe{
   
 
      \item{\code{clear}:}{If this element is a text entry element, this will clear the value.} 
@@ -93,7 +108,7 @@
      \item{\code{sendKeys}:}{Use this method to simulate typing into an element, which may set its value.} 
      \item{\code{submit}:}{If this current element is a form, or an element within a form, then this will be submitted to the remote server.} 
 
-     
+     }
   }
   
     \subsection{Select methods}{
@@ -136,15 +151,15 @@
   To find multiple elements use the following methods in the same way as the previous ones. Note that these methods will return a list.
    
     \itemize{
-         \item{findElementsByXPath}
-         \item{findElementsByClassName}
-         \item{findElementsByCssSelector}
-         \item{findElementsById}
-         \item{findElementByPartialLinkText}
-         \item{findElementsByLinkText}
-         \item{findElementsByName}
-         \item{findElementsByPartialLinkText}
-         \item{findElementsByTagName}
+         \item{\code{findElementsByXPath}}
+         \item{\code{findElementsByClassName}}
+         \item{\code{findElementsByCssSelector}}
+         \item{\code{findElementsById}}
+         \item{\code{findElementByPartialLinkText}}
+         \item{\code{findElementsByLinkText}}
+         \item{\code{findElementsByName}}
+         \item{\code{findElementsByPartialLinkText}}
+         \item{\code{findElementsByTagName}}
     }
     }
  
@@ -153,7 +168,7 @@
 \author{
   Aleix Ruiz de Villa, Andreu Vall, Lluis Ramon
 }
-\seealso{
-  \code{\link{firefoxClass}}
-}
 
+\seealso{
+  \code{\link{setRefClass}}, \code{\link{relenium}}, \code{\link{firefoxClass}}
+}
