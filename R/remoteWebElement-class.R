@@ -11,7 +11,7 @@ remoteWebElementClass$methods(initialize = function(javaObj, ...){
 
 #   javaWebElement$execute()
 #   javaWebElement$execute("return arguments[0].attributes);")
-  browser()
+
   if(javaWebElement$getTagName() == "select"){
     javaSelect <<- .self$tryExc(new(J("org.openqa.selenium.support.ui.Select"), javaObj))
     if( is.null(javaSelect) ){
