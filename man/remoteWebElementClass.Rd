@@ -1,63 +1,7 @@
 \name{remoteWebElementClass}
 \docType{class}
 
-\alias{remoteWebElement}
 \alias{remoteWebElementClass}
-
-\alias{clear, remoteWebElementClass-method} 
-\alias{click, remoteWebElementClass-method} 
-\alias{deselectAll, remoteWebElementClass-method} 
-\alias{deselectByIndex, remoteWebElementClass-method} 
-\alias{deselectByValue, remoteWebElementClass-method} 
-\alias{deselectByVisibleText, remoteWebElementClass-method} 
-\alias{findElementByClassName, remoteWebElementClass-method} 
-\alias{findElementByCssSelector, remoteWebElementClass-method} 
-\alias{findElementById, remoteWebElementClass-method} 
-\alias{findElementByLinkText, remoteWebElementClass-method} 
-\alias{findElementByName, remoteWebElementClass-method} 
-\alias{findElementByPartialLinkText, remoteWebElementClass-method} 
-\alias{findElementByTagName, remoteWebElementClass-method} 
-\alias{findElementByXPath, remoteWebElementClass-method} 
-\alias{findElementsByClassName, remoteWebElementClass-method} 
-\alias{findElementsByCssSelector, remoteWebElementClass-method} 
-\alias{findElementsById, remoteWebElementClass-method} 
-\alias{findElementsByLinkText, remoteWebElementClass-method} 
-\alias{findElementsByName, remoteWebElementClass-method} 
-\alias{findElementsByPartialLinkText, remoteWebElementClass-method} 
-\alias{findElementsByTagName, remoteWebElementClass-method} 
-\alias{findElementsByXPath, remoteWebElementClass-method} 
-\alias{getAllSelectedOptions, remoteWebElementClass-method} 
-\alias{getAttribute, remoteWebElementClass-method} 
-\alias{getCssValue, remoteWebElementClass-method} 
-\alias{getFirstSelectedOption, remoteWebElementClass-method} 
-\alias{getHtml, remoteWebElementClass-method} 
-\alias{getId, remoteWebElementClass-method} 
-\alias{getOptions, remoteWebElementClass-method} 
-\alias{getSize, remoteWebElementClass-method} 
-\alias{getTagName, remoteWebElementClass-method} 
-\alias{getText, remoteWebElementClass-method} 
-\alias{initialize, remoteWebElementClass-method} 
-\alias{isDisplayed, remoteWebElementClass-method} 
-\alias{isEnabled, remoteWebElementClass-method} 
-\alias{isMultiple, remoteWebElementClass-method} 
-\alias{isSelected, remoteWebElementClass-method} 
-\alias{selectByIndex, remoteWebElementClass-method} 
-\alias{selectByValue, remoteWebElementClass-method} 
-\alias{selectByVisibleText, remoteWebElementClass-method} 
-\alias{sendKeys, remoteWebElementClass-method} 
-\alias{submit, remoteWebElementClass-method} 
-\alias{keys, remoteWebElementClass-method} 
-\alias{isMultiple, remoteWebElementClass-method} 
-\alias{getOptions, remoteWebElementClass-method} 
-\alias{deselectAll, remoteWebElementClass-method} 
-\alias{getAllSelectedOptions, remoteWebElementClass-method} 
-\alias{getFirstSelectedOption, remoteWebElementClass-method} 
-\alias{selectByVisibleText, remoteWebElementClass-method} 
-\alias{selectByIndex, remoteWebElementClass-method} 
-\alias{selectByValue, remoteWebElementClass-method} 
-\alias{deselectByValue, remoteWebElementClass-method} 
-\alias{deselectByIndex, remoteWebElementClass-method} 
-\alias{deselectByVisibleText, remoteWebElementClass-method} 
 
 \title{Class  \code{remoteWebElementClass}. A class to represent a remote web element}
 
@@ -166,5 +110,5 @@
 }
 
 \seealso{
-  \code{\link{setRefClass}}, \code{\link{relenium}}, \code{\link{firefoxClass}}
+  \code{\link{setRefClass}}, \code{\link{relenium-package}}, \code{\link{firefoxClass}}
 }

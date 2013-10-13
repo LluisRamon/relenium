@@ -1,36 +1,7 @@
 \name{firefoxClass}
 \docType{class}
 
-\alias{firefox}
 \alias{firefoxClass}
-
-\alias{initialize, firefoxClass-method}
-\alias{close, firefoxClass-method}
-\alias{forward, firefoxClass-method}
-\alias{back, firefoxClass-method}
-
-\alias{get, firefoxClass-method}
-\alias{getTitle, firefoxClass-method}
-\alias{getCurrentUrl, firefoxClass-method}
-\alias{getPageSource, firefoxClass-method}
-
-\alias{findElementByXPath, firefoxClass-method}
-\alias{findElementsByXPath, firefoxClass-method}
-\alias{findElementByClassName, firefoxClass-method}
-\alias{findElementByName, firefoxClass-method}
-\alias{findElementByCssSelector, firefoxClass-method}
-\alias{findElementById, firefoxClass-method}
-\alias{findElementByLinkText, firefoxClass-method}
-\alias{findElementByPartialLinkText, firefoxClass-method}
-\alias{findElementByTagName, firefoxClass-method}
-\alias{findElementsByClassName, firefoxClass-method}
-\alias{findElementsByCssSelector, firefoxClass-method}
-\alias{findElementsById, firefoxClass-method}
-\alias{findElementsByLinkText, firefoxClass-method}
-\alias{findElementsByName, firefoxClass-method}
-\alias{findElementsByPartialLinkText, firefoxClass-method}
-\alias{findElementsByTagName, firefoxClass-method}
-
 
 \title{Class \code{firefoxClass}. A class to represent Firefox web browser}
 \description{
@@ -125,7 +96,7 @@ A simple \code{firefoxClass} example can be found at the end of this file. You c
 }
 
 \seealso{
-  \code{\link{setRefClass}}, \code{\link{relenium}}, \code{\link{remoteWebElementClass}}
+  \code{\link{setRefClass}}, \code{\link{relenium-package}}, \code{\link{remoteWebElementClass}}
 }
 
 
