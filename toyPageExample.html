@@ -1,85 +1,136 @@
 <!DOCTYPE html>
 <!-- saved from url=(0050)http://getbootstrap.com/examples/starter-template/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.png">
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.png">
 
-    <title>Relenium</title>
+		<title>Relenium</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+		<!-- Bootstrap core CSS -->
+		<link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <!-- Custom styles for this template -->
-    <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
+		
+		<!-- Bootstrap select , modifies the css -->
+		<!-- <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet"> -->
+		<link rel="stylesheet" type="text/css" media="screen" href="http://silviomoreto.github.io/bootstrap-select/stylesheets/bootstrap-select.css">
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		  <script src="../../assets/js/html5shiv.js"></script>
+		  <script src="../../assets/js/respond.min.js"></script>
+		<![endif]-->
+	</head>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
-    <![endif]-->
-  </head>
+	<body style="">
 
-  <body style="">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="index.html">Home</a></li>
+						<li><a href="example.html">Example</a></li>
+						<li><a href="toyPageExample.html">Toy Page Example</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
 
-      <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="example.html">Example</a></li>
-            <li><a href="toyPageExample.html">Toy Page Example</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-
-
-    <div class="container">
 		<div id="header_wrap" class="outer">
 			<header class="inner">
-			  <a id="forkme_banner" href="https://github.com/LluisRamon/relenium">View on GitHub</a>
+				<a id="forkme_banner" href="https://github.com/LluisRamon/relenium">View on GitHub</a>
 
-			  <h1 id="project_title">Relenium</h1>
-			  <h2 id="project_tagline">Powerful web scrapping</h2>
+				<h1 id="project_title">Relenium</h1>
+				<h2 id="project_tagline">Selenium for R</h2>
 
-				<section id="downloads">
-				  <a class="zip_download_link" href="https://github.com/LluisRamon/relenium/zipball/master">Download this project as a .zip file</a>
-				  <a class="tar_download_link" href="https://github.com/LluisRamon/relenium/tarball/master">Download this project as a tar.gz file</a>
-				</section>
 			</header>
+		</div>     
+
+
+		<div id="main_content_wrap" class="outer">
+			<section id="main_content" class="inner">
+				<h2>Toy page example</h2>
+				
+				<h4> Input box </h4>
+				
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<input type="checkbox">
+							</span>
+							<input type="text" class="form-control">
+						</div><!-- /input-group -->
+					</div><!-- /.col-lg-6 -->
+				</div>
+				
+				<h4> Hidden data </h4>
+				
+				<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+					<div class="modal-dialog">
+						<div class="modal-content">
+
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+								<h4 class="modal-title" id="myModalLabel">Data</h4>
+								Here goes a table with data that will be extracted using XML package
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div>
+	
+				<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">To data</a>
+				
+				<h4> Select </h4>
+				
+				<select class="selectpicker">
+					<option>Mustard</option>
+					<option>Ketchup</option>
+					<option>Relish</option>
+				</select>
+
+		
+			</section>
 		</div>
-	</div>
-	
-	<div id="main_content_wrap" class="outer">
-		<section id="main_content" class="inner">
-			<h1> Toy page example </h1>
-		</section>
-	</div>
 
-	<div id="footer_wrap" class="outer">
-		<footer class="inner">
-			<p class="copyright">Relenium maintained by <a href="https://github.com/LluisRamon">Lluis Ramon</a> and <a href="https://github.com/aleixrvr">Aleix Ruiz de Villa</a></p>
-			<p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-		</footer>
-	</div>
-	
+		
+		
+		<!-- FOOTER  -->
+		<div id="footer_wrap" class="outer">
+		  <footer class="inner">
+			<p class="copyright">
+				Relenium maintained by <a href="https://github.com/LluisRamon">Lluis Ramon</a> and <a href="https://github.com/aleixrvr">Aleix Ruiz de Villa</a>.
+				Published with <a href="http://pages.github.com">GitHub Pages</a>.
+				Powered by <a href="http://getbootstrap.com/">Bootstrap</a>.
+		  </footer>
+		</div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./javascripts/jquery.js"></script>
-    <script src="./javascripts/bootstrap.min.js"></script>
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="./javascripts/jquery.js"></script>
+		<script src="./javascripts/bootstrap.min.js"></script>
+		
+		<script src="http://silviomoreto.github.io/bootstrap-select/javascripts/bootstrap-select.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(e) {
+				$('.selectpicker').selectpicker();
+			});
+		</script>
   
-
-</body></html>
+	</body>
+</html>

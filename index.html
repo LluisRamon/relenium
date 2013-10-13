@@ -1,129 +1,121 @@
 <!DOCTYPE html>
 <!-- saved from url=(0050)http://getbootstrap.com/examples/starter-template/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.png">
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.png">
 
-    <title>Relenium</title>
+		<title>Relenium</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+		<!-- Bootstrap core CSS -->
+		<link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <!-- Custom styles for this template -->
-    <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
-    <![endif]-->
-  </head>
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		  <script src="../../assets/js/html5shiv.js"></script>
+		  <script src="../../assets/js/respond.min.js"></script>
+		<![endif]-->
+	</head>
 
-  <body style="">
+	<body style="">
 
-      <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="example.html">Example</a></li>
-            <li><a href="toyPageExample.html">Toy Page Example</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-
-
-    <div class="container">
-		<div id="header_wrap" class="outer">
-			<header class="inner">
-			  <a id="forkme_banner" href="https://github.com/LluisRamon/relenium">View on GitHub</a>
-
-			  <h1 id="project_title">Relenium</h1>
-			  <h2 id="project_tagline">Powerful web scrapping</h2>
-
-				<section id="downloads">
-				  <a class="zip_download_link" href="https://github.com/LluisRamon/relenium/zipball/master">Download this project as a .zip file</a>
-				  <a class="tar_download_link" href="https://github.com/LluisRamon/relenium/tarball/master">Download this project as a tar.gz file</a>
-				</section>
-			</header>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="index.html">Home</a></li>
+						<li><a href="example.html">Example</a></li>
+						<li><a href="toyPageExample.html">Toy Page Example</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
 		</div>
 
-		<!-- MAIN CONTENT -->
-			<div id="main_content_wrap" class="outer">
-			  <section id="main_content" class="inner">
-				<h1>
-		<a name="relenium" class="anchor" href="#relenium"><span class="octicon octicon-link"></span></a>relenium</h1>
+		<div id="header_wrap" class="outer">
+			<header class="inner">
+				<a id="forkme_banner" href="https://github.com/LluisRamon/relenium">View on GitHub</a>
 
-		<p>relenium is a third party browser driver for Selenium. The main purpose of this package is making web scraping easier and powerful.</p>
+				<h1 id="project_title">Relenium</h1>
+				<h2 id="project_tagline">Selenium for R</h2>
 
-		<h2>
-		<a name="development" class="anchor" href="#development"><span class="octicon octicon-link"></span></a>Development</h2>
-
-		<p>relenium is in alpha testing. Some errors could be found and documentation is still very poor.</p>
-
-		<h2>
-		<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
-
-		<p>You can install <code>relenium</code> from <code>github</code> using the <code>devtools</code> package. </p>
-
-		<pre><code>require(devtools)
-		install_github('relenium', 'LluisRamon')
-		</code></pre>
-
-		<p><a href="https://github.com/LluisRamon/seleniumJars">seleniumJars</a> and <a href="http://cran.r-project.org/web/packages/rJava/index.html">rJava</a> are required. You can get rJava from CRAN and seleniumJars from github.</p>
-
-		<pre><code>install.packages("rJava")
-
-		require(devtools)
-		install_github('seleniumJars', 'LluisRamon')
-		</code></pre>
-
-		<h2>
-		<a name="bugs-and-new-features" class="anchor" href="#bugs-and-new-features"><span class="octicon octicon-link"></span></a>Bugs and new features</h2>
-
-		<p>To report technical problems with relenium, please file an issue on <a href="https://github.com/LluisRamon/relenium/issues">Github</a> with a <a href="http://adv-r.had.co.nz/Reproducibility.html">short reproducible example</a>. Feedback is welcomed and any new features should be filed as issues as well.</p>
-
-		<h2>
-		<a name="selenium" class="anchor" href="#selenium"><span class="octicon octicon-link"></span></a>Selenium</h2>
-
-		<p><a href="http://docs.seleniumhq.org/">Selenium</a> is a portable software testing framework for web applications. Some members of the <a href="http://rugbcn.wordpress.com/">Barcelona R user group</a>, (Aleix Ruiz de Villa, Andreu Vall and Lluis Ramon) are developing a selenium package for the R programming language. Our aim is to use it for web scraping directly from R. </p>
-			  </section>
-			</div>
-
-			<!-- FOOTER  -->
-			<div id="footer_wrap" class="outer">
-			  <footer class="inner">
-				<p class="copyright">Relenium maintained by <a href="https://github.com/LluisRamon">Lluis Ramon</a> and <a href="https://github.com/aleixrvr">Aleix Ruiz de Villa</a></p>
-				<p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-			  </footer>
-			</div>
-
-			
-
-		  </body>
-		</html>
-
-     
-    </div><!-- /.container -->
+				<section id="downloads">
+					<a class="zip_download_link" href="https://github.com/LluisRamon/relenium/zipball/master">Download this project as a .zip file</a>
+					<a class="tar_download_link" href="https://github.com/LluisRamon/relenium/tarball/master">Download this project as a tar.gz file</a>
+				</section>
+			</header>
+		</div>     
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./javascripts/jquery.js"></script>
-    <script src="./javascripts/bootstrap.min.js"></script>
+		<div id="main_content_wrap" class="outer">
+			<section id="main_content" class="inner">
+				<h2>Description</h2>
+
+				<p>relenium is a third party browser driver for Selenium. The main purpose of this package is making web scraping easier and powerful.</p>
+
+				<h2>Development</h2>
+
+				<p>relenium is in alpha testing. Some errors could be found and documentation is still very poor.</p>
+
+				<h2>Installation</h2>
+
+				<p>You can install <code>relenium</code> from <code>github</code> using the <code>devtools</code> package. </p>
+
+				<pre><code>
+equire(devtools)
+install_github('relenium', 'LluisRamon')
+				</code></pre>
+
+				<p><a href="https://github.com/LluisRamon/seleniumJars">seleniumJars</a> and <a href="http://cran.r-project.org/web/packages/rJava/index.html">rJava</a> are required. You can get rJava from CRAN and seleniumJars from github.</p>
+
+				<pre><code>
+install.packages("rJava")
+require(devtools)
+install_github('seleniumJars', 'LluisRamon')
+				</code></pre>
+
+				<h2>Bugs and new features</h2>
+
+				<p>To report technical problems with relenium, please file an issue on <a href="https://github.com/LluisRamon/relenium/issues">Github</a> with a <a href="http://adv-r.had.co.nz/Reproducibility.html">short reproducible example</a>. Feedback is welcomed and any new features should be filed as issues as well.</p>
+
+				<h2>Selenium</h2>
+
+				<p>
+					<a href="http://docs.seleniumhq.org/">Selenium</a> is a portable software testing framework for web applications. Some members of the <a href="http://rugbcn.wordpress.com/">Barcelona R user group</a>, (Aleix Ruiz de Villa, Andreu Vall and Lluis Ramon) are developing a selenium package for the R programming language. Our aim is to use it for web scraping directly from R. 
+				</p>
+			</section>
+		</div>
+
+		<!-- FOOTER  -->
+		<div id="footer_wrap" class="outer">
+		  <footer class="inner">
+			<p class="copyright">
+				Relenium maintained by <a href="https://github.com/LluisRamon">Lluis Ramon</a> and <a href="https://github.com/aleixrvr">Aleix Ruiz de Villa</a>.
+				Published with <a href="http://pages.github.com">GitHub Pages</a>.
+				Powered by <a href="http://getbootstrap.com/">Bootstrap</a>.
+		  </footer>
+		</div>
+
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="./javascripts/jquery.js"></script>
+		<script src="./javascripts/bootstrap.min.js"></script>
   
-
-</body></html>
+	</body>
+</html>
