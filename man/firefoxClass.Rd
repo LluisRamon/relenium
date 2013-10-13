@@ -128,8 +128,4 @@ A simple \code{firefoxClass} example can be found at the end of this file. You c
   \code{\link{setRefClass}}, \code{\link{relenium}}, \code{\link{remoteWebElementClass}}
 }
 
-\author{
-  Aleix Ruiz de Villa, Andreu Vall, Lluis Ramon
-}
-
 

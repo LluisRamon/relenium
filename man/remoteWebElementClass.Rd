@@ -165,10 +165,6 @@
  
 }
 
-\author{
-  Aleix Ruiz de Villa, Andreu Vall, Lluis Ramon
-}
-
 \seealso{
   \code{\link{setRefClass}}, \code{\link{relenium}}, \code{\link{firefoxClass}}
 }

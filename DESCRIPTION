@@ -1,10 +1,13 @@
 Package: relenium
 Type: Package
 Title: Bindings for the Selenium library
-Version: 0.1
-Date: 2013-07-05
-Author: Aleix Ruiz de Villa, Andreu Vall, Lluis Ramon
-Maintainer: Aleix Ruiz de Villa <aleix@somewhere.net>
+Version: 0.2.0
+Date: 2013-10-13
+Authors@R: c(person("Aleix", "Ruiz de Villa", role = c("aut", "cre")),
+    person("Lluis", "Ramon", role = c("aut", "cre")),
+    person("Andreu", "Vall", role = "ctb"))
+Author: Aleix Ruiz de Villa, Lluis Ramon    
+Maintainer: Aleix Ruiz de Villa <aleixrvr@gmail.com>
 Description: relenium is a third party browser driver for Selenium. The main purpose of this package is making web scrapping easier and powerful.
 BugReports: https://github.com/LluisRamon/relenium/issues
 URL: http://lluisramon.github.io/relenium/ http://docs.seleniumhq.org/
