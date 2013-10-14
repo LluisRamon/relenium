@@ -67,14 +67,9 @@
 				<h4> Input box </h4>
 				
 				<div class="row">
-					<div class="col-lg-6">
-						<div class="input-group">
-							<span class="input-group-addon">
-								<input type="checkbox">
-							</span>
+						<form class="navbar-form navbar-left" role="search">
 							<input type="text" class="form-control">
-						</div><!-- /input-group -->
-					</div><!-- /.col-lg-6 -->
+						</form>
 				</div>
 				
 				<h4> Hidden data </h4>
@@ -82,24 +77,38 @@
 				<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 					<div class="modal-dialog">
 						<div class="modal-content">
-
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-								<h4 class="modal-title" id="myModalLabel">Data</h4>
-								Here goes a table with data that will be extracted using XML package
+								<table border="1">
+								<tr>
+								  <th>day</th>
+								  <th>y value</th>
+								  <th>x value</th>
+								</tr>
+								<tr>
+								  <td>2013-11-14</td>
+								  <td>10</td>
+								  <td>15</td>
+								</tr>
+								<tr>
+								  <td>2013-11-15</td>
+								  <td>20</td>
+								  <td>25</td>
+								</tr>
+								</table>
 							</div>
 						</div><!-- /.modal-content -->
 					</div><!-- /.modal-dialog -->
 				</div>
 	
-				<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">To data</a>
+				<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Data</a>
 				
 				<h4> Select </h4>
 				
-				<select class="selectpicker">
-					<option>Mustard</option>
-					<option>Ketchup</option>
-					<option>Relish</option>
+				<select class="selectpicker" multiple>
+					<option>Mango</option>
+					<option>Nectarine</option>
+					<option>Cherry</option>
 				</select>
 
 		
@@ -125,10 +134,13 @@
 		<script src="./javascripts/jquery.js"></script>
 		<script src="./javascripts/bootstrap.min.js"></script>
 		
+
+
 		<script src="http://silviomoreto.github.io/bootstrap-select/javascripts/bootstrap-select.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(e) {
-				$('.selectpicker').selectpicker();
+				$('.selectpicker').selectpicker({
+					style: 'btn-info'});
 			});
 		</script>
   
