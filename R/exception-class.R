@@ -36,6 +36,7 @@ exceptionClass$methods(tryExc = function(expr){
     if(sum(ind)>0){
       print(as.vector(exceptionTable[ind, 2]))
     }else{
+      print("Error")
       print(javaWarMes)
     }
     
