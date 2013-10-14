@@ -165,9 +165,20 @@ remoteWebElementClass$methods(getId = function(){
 
 remoteWebElementClass$methods(getOptions = function(){
   if( !is.null( javaSelect) ){
-    .self$tryExc(J(javaSelect, "getOptions"))
-  }
-  return(invisible())
+    elements <- .self$tryExc(J(javaSelect, "getOptions"))
+    if( !is.null( elements ) ){
+      elements <- as.list(elements)
+      elements <- lapply(elements, function(javaObject){
+        webElemAux <- remoteWebElementClass$new(javaObject)
+        return(webElemAux)
+      })
+      return(elements)  
+    }else{
+      print("No options returned")
+      return(NULL)
+    }
+  } 
+  return(NULL)
 })
 
 

@@ -34,6 +34,7 @@ exceptionClass$methods(tryExc = function(expr){
       grepl(excpName, javaWarMes)
     })
     if(sum(ind)>0){
+      print(paste("Error:", as.vector(exceptionTable[ind, 1])))
       print(as.vector(exceptionTable[ind, 2]))
     }else{
       print(javaWarMes)
