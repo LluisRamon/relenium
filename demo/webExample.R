@@ -9,7 +9,7 @@ inputElement$sendKeys(key = "ENTER")
 
 buttonElement <- firefox$findElementByXPath("//*[@id='main_content']/a")
 buttonElement$click()
-# -> copy data
+
 buttonElement <- firefox$findElementByXPath("//*[@id='myModal']/div/div/div/button")
 buttonElement$click()
 
