@@ -106,6 +106,14 @@ firefoxClass$methods(show = function(){
   return()
 })
 
+firefoxClass$methods(printHtml = function(){
+  
+  print(htmlParse(.self$getPageSource()))
+  
+  return()
+})
+
+
 .DollarNames.firefoxClass <- function(x, pattern){
 
   auxMeth <- c(exceptionClass$methods(), "initialize", "show#envRefClass", "initialize#exceptionClass")

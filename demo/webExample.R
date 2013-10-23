@@ -3,6 +3,8 @@ require(relenium)
 firefox <- firefoxClass$new()
 firefox$get("http://lluisramon.github.io/relenium/toyPageExample.html")
 
+firefox$printHtml()
+
 inputElement <- firefox$findElementByXPath("//*[@id='main_content']/div[1]/form/input")
 inputElement$sendKeys("R Project")
 inputElement$sendKeys(key = "ENTER")
@@ -14,6 +16,9 @@ buttonElement <- firefox$findElementByXPath("//*[@id='myModal']/div/div/div/butt
 buttonElement$click()
 
 selectElement <- firefox$findElementByXPath("//*[@id='main_content']/select")
+
+selectElement$printHtml()
+
 optsList <- selectElement$getOptions() ## returns a list of options (which are webelements)
 sapply(optsList, function(optEle){
   optEle$getText()

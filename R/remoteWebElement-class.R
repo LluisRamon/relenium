@@ -257,6 +257,12 @@ remoteWebElementClass$methods(submit = function(){
   return(invisible())
 })
 
+remoteWebElementClass$methods(printHtml = function(){
+  
+  print(htmlParse(.self$getHtml()))
+  
+  return()
+})
 
 .DollarNames.remoteWebElementClass <- function(x, pattern){
 

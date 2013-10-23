@@ -9,7 +9,9 @@ Authors@R: c(person("Aleix", "Ruiz de Villa", role = c("aut", "cre")),
 Author: Aleix Ruiz de Villa, Lluis Ramon    
 Maintainer: Aleix Ruiz de Villa <aleixrvr@gmail.com>
 Description: relenium is a third party browser driver for Selenium. The main purpose of this package is making web scrapping easier and powerful.
+Imports: XML, seleniumJars
 BugReports: https://github.com/LluisRamon/relenium/issues
 URL: http://lluisramon.github.io/relenium/ http://docs.seleniumhq.org/
 SystemRequirements: Java, Firefox
 License: GPL-3
+
