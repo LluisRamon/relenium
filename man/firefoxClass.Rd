@@ -58,7 +58,7 @@ A simple \code{firefoxClass} example can be found at the end of this file. You c
   
      \item{\code{findElementByXPath}:}{Use this method when you know the \emph{xpath} of an element. With this strategy, the first element matching the \emph{xpath} will be returned.}
      \item{\code{findElementByClassName}:}{Use this method when you know \emph{class} attribute of an element. With this strategy, the first element with the \emph{class} attribute value matching the location will be returned.}
-     \item{\code{findElementByCssSelector}:}{TODO (the driver's underlying W3 Selector engine)}
+     \item{\code{findElementByCssSelector}:}{Use this method to find elements via the driver's underlying W3 Selector engine. If the browser does not implement the Selector API, a best effort is made to emulate the API.}
      \item{\code{findElementById}:}{Use this method when you know \emph{id} attribute of an element. With this strategy, the first element with the \emph{id} attribute value matching the location will be returned.}
      \item{\code{findElementByName}:}{Use this method when you know the \emph{name} attribute of an element. With this strategy, the first element with the \emph{name} attribute value matching the location will be returned.}
      \item{\code{findElementByLinkText}:}{Use this method when you know \emph{text} of an element. With this strategy, the first element matching the \emph{exact text} will be returned.}   
