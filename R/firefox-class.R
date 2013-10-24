@@ -45,7 +45,7 @@ firefoxClass$methods(resFun)
 findNamesP <- paste("findElements", findNames, sep = "")
 resFun <- lapply(findNamesP, function(auxN){
   bodyTxt <- paste("{
-    elements <- .self$tryExc(J(javaDriver, ", auxN, ", argName))
+    elements <- .self$tryExc(J(javaDriver, '", auxN, "', argName))
     if( !is.null( elements ) ){
       elements <- as.list(elements)
       elements <- lapply(elements, function(javaObject){
