@@ -60,6 +60,83 @@
 		<div id="main_content_wrap" class="outer">
 			<section id="main_content" class="inner">
 				<h2>Example</h2>
+				
+<p> Relenium has been implemented using reference classes. No knowledge of them is required, but the use of relenium may seem a little bit different from the standard R. </p>				
+				
+<p> To open a new Firefox navigator use the function <code> new </code> .</p>				
+<pre><code>
+require(relenium)
+firefox <- firefoxClass$new()
+</code></pre>
+
+<p> The methods available for the this new navigator are accesed via the operator <code> $ </code>. Use the tab completion to get a list of such methods.</p>
+
+<pre><code>		
+firefox$ # and press the TAB key
+</code></pre>				
+
+<p> We go to some url using the function <code> get </code>. </p>
+<pre><code>		
+firefox$get("http://lluisramon.github.io/relenium/toyPageExample.html")
+</code></pre>
+
+<p> The html from the webpage can be obtained with the <code> getPageSource </code> (and returning a "character") or in a more legible way with the <code> printHtml 	</code> function. </p>
+<pre><code>		
+firefox$getPageSource()
+firefox$printHtml()
+</code></pre>
+
+<pre><code>		
+inputElement <- firefox$findElementByXPath("//*[@id='main_content']/div[1]/form/input")
+</code></pre>
+
+<pre><code>		
+inputElement$sendKeys("R Project")
+inputElement$sendKeys(key = "ENTER")
+</code></pre>
+
+<pre><code>		
+buttonElement <- firefox$findElementByXPath("//*[@id='main_content']/a")
+buttonElement$click()
+</code></pre>
+
+<pre><code>		
+buttonElement <- firefox$findElementByXPath("//*[@id='myModal']/div/div/div/button")
+buttonElement$click()
+</code></pre>
+
+<pre><code>		
+selectElement <- firefox$findElementByXPath("//*[@id='main_content']/select")
+selectElement$printHtml()
+</code></pre>
+
+<pre><code>		
+optsList <- selectElement$getOptions() ## returns a list of options (which are webelements)
+sapply(optsList, function(optEle){
+  optEle$getText()
+})
+</code></pre>
+
+<pre><code>		
+selectElement$selectByValue("Mango")
+selectElement$selectByValue("Nectarine")
+</code></pre>
+
+<pre><code>		
+optsSel <- selectElement$getAllSelectedOptions() ## returns a list of selected options (which are webelements)
+sapply(optsSel, function(optEle){
+  optEle$getText()
+})
+</code></pre>
+
+<pre><code>		
+selectElement$deselectAll()
+</code></pre>
+
+<pre><code>		
+firefox$close()
+</code></pre>
+
 			</section>
 		</div>
 
