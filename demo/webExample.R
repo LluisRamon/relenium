@@ -1,4 +1,4 @@
-require(relenium)
+#require(relenium)
 
 firefox <- firefoxClass$new()
 firefox$get("http://lluisramon.github.io/relenium/toyPageExample.html")
@@ -19,13 +19,15 @@ selectElement <- firefox$findElementByXPath("//*[@id='main_content']/select")
 
 selectElement$printHtml()
 
-optsList <- selectElement$getOptions() ## returns a list of options (which are webelements)
+optsList <- selectElement$getOptions()
 sapply(optsList, function(optEle){
   optEle$getText()
 })
+
+
 selectElement$selectByValue("Mango")
 selectElement$selectByValue("Nectarine")
-optsSel <- selectElement$getAllSelectedOptions() ## returns a list of selected options (which are webelements)
+optsSel <- selectElement$getAllSelectedOptions()
 sapply(optsSel, function(optEle){
   optEle$getText()
 })

@@ -72,7 +72,7 @@ findNames <- c("ByClassName", "ByCssSelector", "ById",
 findNamesS <- paste("findElement", findNames, sep = "")
 resFun <- lapply(findNamesS, function(auxN){
   bodyTxt <- paste("{
-    webElement <- .self$tryExc(J(javaDriver, '", auxN, "', argName))
+    webElement <- .self$tryExc(J(javaWebElement, '", auxN, "', argName))
     if( !is.null(webElement) ){
       webElement <- remoteWebElementClass$new(webElement)
       return(webElement)
@@ -90,7 +90,7 @@ remoteWebElementClass$methods(resFun)
 findNamesP <- paste("findElements", findNames, sep = "")
 resFun <- lapply(findNamesP, function(auxN){
   bodyTxt <- paste("{
-    elements <- .self$tryExc(J(javaDriver, ", auxN,", argName))
+    elements <- .self$tryExc(J(javaWebElement, '", auxN,"', argName))
     if( !is.null(elements) ){
       elements <- as.list(elements)
       elements <- lapply(elements, function(javaObject){
