@@ -33,5 +33,6 @@ sapply(optsSel, function(optEle){
 })
 selectElement$deselectAll()
 
-
+firefox$get("http://lluisramon.github.io/relenium/")
+firefox$back()
 firefox$close()

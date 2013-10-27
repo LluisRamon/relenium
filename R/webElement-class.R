@@ -1,7 +1,7 @@
 webElementClass <- setRefClass("webElementClass", fields = list(javaKeys = "javaKeysClass", 
-                                                                            javaWebElement = "ANY",
-                                                                            javaSelect = "ANY",
-                                                                            keys = "character"), 
+                                                                javaWebElement = "ANY",
+                                                                javaSelect = "ANY",
+                                                                keys = "character"), 
                                      contains = "exceptionClass")
 
 webElementClass$methods(initialize = function(javaObj, ...){
