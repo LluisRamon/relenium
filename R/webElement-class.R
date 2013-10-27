@@ -248,7 +248,7 @@ webElementClass$methods(sendKeys = function(text = NULL, keys = NULL){
 })
 
 webElementClass$methods(show = function(){
-  print("Web element. Object from class remoteWebElement.")
+  print("Web element. Object from class webElement.")
   
 })
 

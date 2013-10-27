@@ -9,7 +9,7 @@ exceptionClass$methods(initialize=function(){
                       "InvalidElementStateException", "",
                       "InvalidSelectorException", "",
                       "NoAlertPresentException", "Indicates that a user has tried to access an alert when one is not present.",
-                      "NoSuchElementException", "Thrown by Firefox$findElement(By by) and remoteWebElement$findElement(By by).",
+                      "NoSuchElementException", "Thrown by Firefox$findElement(By by) and webElement$findElement(By by).",
                       "NoSuchFrameException", "Thrown by WebDriver.switchTo().frame(int frameIndex) and WebDriver.switchTo().frame(String frameName).",
                       "NoSuchWindowException", "Thrown by WebDriver.switchTo().window(String windowName).",
                       "NotFoundException", "SessionNotCreatedException  Indicates that a session could not be created.",
