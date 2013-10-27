@@ -38,9 +38,11 @@ A simple \code{firefoxClass} example can be found at the end of this file. You c
            \item{\code{getTitle}:}{Use this method to get the title of the current page, with leading and trailing whitespace stripped, or null if one is not already set.}
            \item{\code{getCurrentUrl}:}{Use this method to get a string representing the current URL that the browser is looking at.}
            \item{\code{getPageSource}:}{Use this method to get the source of the last loaded page.}
+           \item{\code{printHtml}:}{Use this method to parse and print the the html code of the last loaded page. It is like getPageSource but it returns the html code in a more readable form.}
            \item{\code{forward}:}{Use this method to move a single "item" forward in the browser's history. Does nothing if we are on the latest page viewed.}
            \item{\code{back}:}{Use this method to move back a single "item" in the browser's history.}
-           \item{\code{close}:}{Use this method to close the Firefox browser.}
+           \item{\code{close}:}{Use this method to close the Firefox browser.} 
+
       }
       % Thre documentation links
       % http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/WebDriver.html#getPageSource%28%29

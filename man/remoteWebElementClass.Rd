@@ -46,6 +46,7 @@
      \item{\code{getSize}:}{What is the width and height of the rendered element?} 
      \item{\code{getTagName}:}{Get the tag name of this element.} 
      \item{\code{getText}:}{Get the visible text} 
+     \item{\code{printHtml}:}{Parse and print the inner html code of this element. It is like getHtml but it returns the html code in a more readable form.}
      \item{\code{isDisplayed}:}{Is this element displayed or not?} 
      \item{\code{isEnabled}:}{Is the element currently enabled or not? This will generally return true for everything but disabled input elements}
      \item{\code{isSelected}:}{Determine whether or not this element is selected or not. This operation only applies to input elements such as checkboxes, options in a select and radio buttons. It returns True if the element is currently selected or checked, false otherwise.} 
