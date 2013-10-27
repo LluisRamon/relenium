@@ -61,45 +61,40 @@
 		</div>     
 
 
-		<div id="main_content_wrap" class="outer">
-			<section id="main_content" class="inner">
-				<h2>Description</h2>
+<!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>
+<a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h2>
 
-				<p>relenium is a third party browser driver for Selenium. The main purpose of this package is making web scraping easier and powerful.</p>
+<p><a href="http://docs.seleniumhq.org/">Selenium</a> is a popular suite of tools specifically for automating web browsers. Selenium allows users to write tests in a number of popular programming languages including Java. The <strong>relenium package</strong> is intended to provide access to Selenium and use it to boost web navigation and to ease the path for web scraping in R.</p>
 
-				<h2>Development</h2>
+<h2>
+<a name="development" class="anchor" href="#development"><span class="octicon octicon-link"></span></a>Development</h2>
 
-				<p>relenium is in alpha testing. Some errors could be found and documentation is still very poor.</p>
+<p>Some members of the <a href="http://rugbcn.wordpress.com/">Barcelona R user group</a> are developing relenium. Right now, relenium is in beta testing. Some errors could be found and documentation is still been improved.</p>
 
-				<h2>Installation</h2>
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
 
-				<p>You can install <code>relenium</code> from <code>github</code> using the <code>devtools</code> package. </p>
+<p>You can install <code>relenium</code> from <code>github</code> using the <code>devtools</code> package. A recent version of a Java Runtime Environment (JRE) and Firefox web browser are required. <a href="https://github.com/LluisRamon/seleniumJars">seleniumJars</a> and <a href="http://cran.r-project.org/web/packages/rJava/index.html">rJava</a> R packages are also needed, you can get <code>rJava</code> from <code>CRAN</code> and <code>seleniumJars</code> from <code>github</code>.</p>
 
-				<pre><code>
+<pre><code>install.packages("rJava")
+
 require(devtools)
-install_github('relenium', 'LluisRamon')
-				</code></pre>
 
-				<p><a href="https://github.com/LluisRamon/seleniumJars">seleniumJars</a> and <a href="http://cran.r-project.org/web/packages/rJava/index.html">rJava</a> are required. You can get rJava from CRAN and seleniumJars from github.</p>
-
-				<pre><code>
-install.packages("rJava")
-require(devtools)
 install_github('seleniumJars', 'LluisRamon')
-				</code></pre>
+install_github('relenium', 'LluisRamon')
+</code></pre>
 
-				<h2>Bugs and new features</h2>
+<p>In case you are using Windows you will also need <a href="http://cran.r-project.org/bin/windows/Rtools/">rtools</a>. In case R is trying to access on Intenet through a proxy, follow this <a href="http://stackoverflow.com/questions/17783686/solution-how-to-install-github-when-there-is-a-proxy">SO question</a>. </p>
 
-				<p>To report technical problems with relenium, please file an issue on <a href="https://github.com/LluisRamon/relenium/issues">Github</a> with a <a href="http://adv-r.had.co.nz/Reproducibility.html">short reproducible example</a>. Feedback is welcomed and any new features should be filed as issues as well.</p>
+<h2>
+<a name="bugs-and-new-features" class="anchor" href="#bugs-and-new-features"><span class="octicon octicon-link"></span></a>Bugs and new features</h2>
 
-				<h2>Selenium</h2>
-
-				<p>
-					<a href="http://docs.seleniumhq.org/">Selenium</a> is a portable software testing framework for web applications. Some members of the <a href="http://rugbcn.wordpress.com/">Barcelona R user group</a>, (Aleix Ruiz de Villa, Andreu Vall and Lluis Ramon) are developing a selenium package for the R programming language. Our aim is to use it for web scraping directly from R. 
-				</p>
-			</section>
-		</div>
-
+<p>To report technical problems with relenium, please file an issue on <a href="https://github.com/LluisRamon/relenium/issues">Github</a> with a <a href="http://adv-r.had.co.nz/Reproducibility.html">short reproducible example</a>. Feedback is welcomed and any new features should be filed as issues as well.</p>
+      </section>
+    </div>
 		<!-- FOOTER  -->
 		<div id="footer_wrap" class="outer">
 		  <footer class="inner">
