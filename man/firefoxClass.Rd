@@ -53,7 +53,7 @@ A simple \code{firefoxClass} example can be found at the end of this file. You c
 
   \subsection{Locating elements}{
  
-    There are diferent methods to find a single element in a page. This methods will  locate and return a \code{\link{remoteWebElementClass}}.
+    There are diferent methods to find a single element in a page. This methods will  locate and return a \code{\link{webElementClass}}.
     % Java Doc http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/By.html
   
     \describe{
@@ -98,7 +98,7 @@ A simple \code{firefoxClass} example can be found at the end of this file. You c
 }
 
 \seealso{
-  \code{\link{setRefClass}}, \code{\link{relenium-package}}, \code{\link{remoteWebElementClass}}
+  \code{\link{setRefClass}}, \code{\link{relenium-package}}, \code{\link{webElementClass}}
 }
 
 

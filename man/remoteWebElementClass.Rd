@@ -1,9 +1,9 @@
-\name{remoteWebElementClass}
+\name{webElementClass}
 \docType{class}
 
-\alias{remoteWebElementClass}
+\alias{webElementClass}
 
-\title{Class  \code{remoteWebElementClass}. A class to represent a remote web element}
+\title{Class  \code{webElementClass}. A class to represent a remote web element}
 
 \description{
   This class is designed to represent and interact with a remote web element.
@@ -11,16 +11,16 @@
 
 \details{
 
-  The remoteWebElement class is implemented as a reference class
+  The webElement class is implemented as a reference class
   (see \code{\link{setRefClass}} for more details). This class is designed to represent and interact with a remote web element.
  
   It represents an HTML element. Generally, all interesting operations to do with interacting with a page will be performed through this interface.
  
-  You get a \code{remoteWebElementClass} from \code{\link{firefoxClass}} find methods or from other \code{remoteWebElementClass}. With this class you can navigate, select, web data extraction and find web elements.
+  You get a \code{webElementClass} from \code{\link{firefoxClass}} find methods or from other \code{webElementClass}. With this class you can navigate, select, web data extraction and find web elements.
  
     All methods implemented are explained below. Documentation is based in the original Selinum Java documentation. It is possible to access the methods with TAB completion.
    
-  An example of \code{remoteWebElementClass} can be found using \code{demo(package = "relenium")}.
+  An example of \code{webElementClass} can be found using \code{demo(package = "relenium")}.
   
 }
 
