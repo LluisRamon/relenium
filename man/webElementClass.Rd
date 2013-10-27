@@ -1,9 +1,9 @@
-\name{remoteWebElementClass}
+\name{webElementClass}
 \docType{class}
 
-\alias{remoteWebElementClass}
+\alias{webElementClass}
 
-\title{Class  \code{remoteWebElementClass}. A class to represent a remote web element}
+\title{Class  \code{webElementClass}. A class to represent a web element}
 
 \description{
   This class is designed to represent and interact with a remote web element.
@@ -11,16 +11,16 @@
 
 \details{
 
-  The remoteWebElement class is implemented as a reference class
+  The webElement class is implemented as a reference class
   (see \code{\link{setRefClass}} for more details). This class is designed to represent and interact with a remote web element.
  
   It represents an HTML element. Generally, all interesting operations to do with interacting with a page will be performed through this interface.
  
-  You get a \code{remoteWebElementClass} from \code{\link{firefoxClass}} find methods or from other \code{remoteWebElementClass}. With this class you can navigate, select, web data extraction and find web elements.
+  You get a \code{webElementClass} from \code{\link{firefoxClass}} find methods or from other \code{webElementClass}. With this class you can navigate, select, web data extraction and find web elements.
  
     All methods implemented are explained below. Documentation is based in the original Selinum Java documentation. It is possible to access the methods with TAB completion.
    
-  An example of \code{remoteWebElementClass} can be found using \code{demo(package = "relenium")}.
+  An example of \code{webElementClass} can be found using \code{demo(package = "relenium")}.
   
 }
 
@@ -46,6 +46,7 @@
      \item{\code{getSize}:}{What is the width and height of the rendered element?} 
      \item{\code{getTagName}:}{Get the tag name of this element.} 
      \item{\code{getText}:}{Get the visible text} 
+     \item{\code{printHtml}:}{Parse and print the inner html code of this element. It is like getHtml but it returns the html code in a more readable form.}
      \item{\code{isDisplayed}:}{Is this element displayed or not?} 
      \item{\code{isEnabled}:}{Is the element currently enabled or not? This will generally return true for everything but disabled input elements}
      \item{\code{isSelected}:}{Determine whether or not this element is selected or not. This operation only applies to input elements such as checkboxes, options in a select and radio buttons. It returns True if the element is currently selected or checked, false otherwise.} 

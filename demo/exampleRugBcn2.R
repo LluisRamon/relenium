@@ -5,15 +5,15 @@ require(devtools)
 firefox <- firefoxClass$new()
 firefox$get("http://rugbcn.wordpress.com/")
 
-remoteWebElement <- firefox$findElementById("searchform")
+webElement <- firefox$findElementById("searchform")
 # keys that can be used in the sendkeys function
-remoteWebElement$keys
+webElement$keys
 # inner html code of the element
-remoteWebElement$getHtml()
+webElement$getHtml()
 
-remoteWebElement <- firefox$findElementByXPath("//*[@id='s']")
-remoteWebElement$sendKeys("LLuis Ramon")
-remoteWebElement$sendKeys(keys = "ENTER")
+webElement <- firefox$findElementByXPath("//*[@id='s']")
+webElement$sendKeys("LLuis Ramon")
+webElement$sendKeys(keys = "ENTER")
 
 firefox$back()
 firefox$forward()
