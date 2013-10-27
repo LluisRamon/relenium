@@ -3,7 +3,7 @@
 
 \alias{webElementClass}
 
-\title{Class  \code{webElementClass}. A class to represent a remote web element}
+\title{Class  \code{webElementClass}. A class to represent a web element}
 
 \description{
   This class is designed to represent and interact with a remote web element.
