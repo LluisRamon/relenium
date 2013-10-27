@@ -29,7 +29,7 @@ resFun <- lapply(findNamesS, function(auxN){
   bodyTxt <- paste("{
     webElement <- .self$tryExc(J(javaDriver, '", auxN, "', argName))
     if( !is.null(webElement) ){
-      webElement <- remoteWebElementClass$new(webElement)
+      webElement <- webElementClass$new(webElement)
       return(webElement)
     }else{
       return(NULL)
@@ -49,7 +49,7 @@ resFun <- lapply(findNamesP, function(auxN){
     if( !is.null( elements ) ){
       elements <- as.list(elements)
       elements <- lapply(elements, function(javaObject){
-        webElemAux <- remoteWebElementClass$new(javaObject)
+        webElemAux <- webElementClass$new(javaObject)
         return(webElemAux)
       })
       return(elements)
