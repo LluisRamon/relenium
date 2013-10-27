@@ -1,8 +1,8 @@
 Package: relenium
 Type: Package
 Title: Bindings for the Selenium library
-Version: 0.2.0
-Date: 2013-10-13
+Version: 0.3.0
+Date: 2013-10-27
 Authors@R: c(person("Aleix", "Ruiz de Villa", role = c("aut", "cre")),
     person("Lluis", "Ramon", role = c("aut", "cre")),
     person("Andreu", "Vall", role = "ctb"))
