@@ -35,25 +35,22 @@
   \subsection{Navigate and web data extraction}{
     
     \describe{
-  
-
-     \item{\code{clear}:}{If this element is a text entry element, this will clear the value.} 
-     \item{\code{click}:}{Click this element.} 
-     \item{\code{getAttribute}:}{Get the value of a the given attribute of the element.} 
-     \item{\code{getCssValue}:}{Get the value of a given CSS property.} 
-     \item{\code{getHtml}:}{Get the inner html code of this element.} 
-     \item{\code{getId}:}{Get the id of this element.} 
-     \item{\code{getSize}:}{What is the width and height of the rendered element?} 
-     \item{\code{getTagName}:}{Get the tag name of this element.} 
-     \item{\code{getText}:}{Get the visible text} 
-     \item{\code{printHtml}:}{Parse and print the inner html code of this element. It is like getHtml but it returns the html code in a more readable form.}
-     \item{\code{isDisplayed}:}{Is this element displayed or not?} 
-     \item{\code{isEnabled}:}{Is the element currently enabled or not? This will generally return true for everything but disabled input elements}
-     \item{\code{isSelected}:}{Determine whether or not this element is selected or not. This operation only applies to input elements such as checkboxes, options in a select and radio buttons. It returns True if the element is currently selected or checked, false otherwise.} 
-     \item{\code{sendKeys}:}{Use this method to simulate typing into an element, which may set its value.} 
-     \item{\code{submit}:}{If this current element is a form, or an element within a form, then this will be submitted to the remote server.} 
-
-     }
+       \item{\code{clear}:}{If this element is a text entry element, this will clear the value.} 
+       \item{\code{click}:}{Click this element.} 
+       \item{\code{getAttribute}:}{Get the value of a the given attribute of the element.} 
+       \item{\code{getCssValue}:}{Get the value of a given CSS property.} 
+       \item{\code{getHtml}:}{Get the inner html code of this element.} 
+       \item{\code{getId}:}{Get the id of this element.} 
+       \item{\code{getSize}:}{What is the width and height of the rendered element?} 
+       \item{\code{getTagName}:}{Get the tag name of this element.} 
+       \item{\code{getText}:}{Get the visible text} 
+       \item{\code{printHtml}:}{Parse and print the inner html code of this element. It is like getHtml but it returns the html code in a more readable form.}
+       \item{\code{isDisplayed}:}{Is this element displayed or not?} 
+       \item{\code{isEnabled}:}{Is the element currently enabled or not? This will generally return true for everything but disabled input elements}
+       \item{\code{isSelected}:}{Determine whether or not this element is selected or not. This operation only applies to input elements such as checkboxes, options in a select and radio buttons. It returns True if the element is currently selected or checked, false otherwise.} 
+       \item{\code{sendKeys}:}{Use this method to simulate typing into an element, which may set its value.} 
+       \item{\code{submit}:}{If this current element is a form, or an element within a form, then this will be submitted to the remote server.} 
+       }
   }
   
     \subsection{Select methods}{
