@@ -72,15 +72,15 @@ A simple \code{firefoxClass} example can be found at the end of this file. You c
   
     \itemize{
     
-         \item{\code{findElementsByXPath}}
-         \item{\code{findElementsByClassName}}
-         \item{\code{findElementsByCssSelector}}
-         \item{\code{findElementsById}}
-         \item{\code{findElementByPartialLinkText}}
-         \item{\code{findElementsByLinkText}}
-         \item{\code{findElementsByName}}
-         \item{\code{findElementsByPartialLinkText}}
-         \item{\code{findElementsByTagName}}
+         \item \code{findElementsByXPath}
+         \item \code{findElementsByClassName}
+         \item \code{findElementsByCssSelector}
+         \item \code{findElementsById}
+         \item \code{findElementByPartialLinkText}
+         \item \code{findElementsByLinkText}
+         \item \code{findElementsByName}
+         \item \code{findElementsByPartialLinkText}
+         \item \code{findElementsByTagName}
     }
 
 

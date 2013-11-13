@@ -96,15 +96,15 @@
   To find multiple elements use the following methods in the same way as the previous ones. Note that these methods will return a list.
    
     \itemize{
-         \item{\code{findElementsByXPath}}
-         \item{\code{findElementsByClassName}}
-         \item{\code{findElementsByCssSelector}}
-         \item{\code{findElementsById}}
-         \item{\code{findElementByPartialLinkText}}
-         \item{\code{findElementsByLinkText}}
-         \item{\code{findElementsByName}}
-         \item{\code{findElementsByPartialLinkText}}
-         \item{\code{findElementsByTagName}}
+         \item \code{findElementsByXPath}
+         \item \code{findElementsByClassName}
+         \item \code{findElementsByCssSelector}
+         \item \code{findElementsById}
+         \item \code{findElementByPartialLinkText}
+         \item \code{findElementsByLinkText}
+         \item \code{findElementsByName}
+         \item \code{findElementsByPartialLinkText}
+         \item \code{findElementsByTagName}
     }
     }
  
