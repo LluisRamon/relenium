@@ -9,7 +9,7 @@
 }
 \details{
   The firefox class is implemented as a reference class
-  (see \code{\link{setRefClass}} for more details). This class is designed to represent and interact with a Firefox web browser.
+  (see \code{\link{ReferenceClasses}} for more details). This class is designed to represent and interact with a Firefox web browser.
  
 You can open a new Firefox web browser with \code{firefoxClass$new()}, navigate to any web page, web data extraction and find web elements by diferent ways like tag name, text, id, xpath and others.
 
@@ -98,7 +98,7 @@ A simple \code{firefoxClass} example can be found at the end of this file. You c
 }
 
 \seealso{
-  \code{\link{setRefClass}}, \code{\link{relenium-package}}, \code{\link{webElementClass}}
+  \code{\link{ReferenceClasses}}, \code{\link{relenium-package}}, \code{\link{webElementClass}}
 }
 
 

@@ -12,7 +12,7 @@
 \details{
 
   The webElement class is implemented as a reference class
-  (see \code{\link{setRefClass}} for more details). This class is designed to represent and interact with a web element.
+  (see \code{\link{ReferenceClasses}} for more details). This class is designed to represent and interact with a web element.
  
   It represents an HTML element. Generally, all interesting operations to do with interacting with a page will be performed through this interface.
  
@@ -108,5 +108,5 @@
 }
 
 \seealso{
-  \code{\link{setRefClass}}, \code{\link{relenium-package}}, \code{\link{firefoxClass}}
+  \code{\link{ReferenceClasses}}, \code{\link{relenium-package}}, \code{\link{firefoxClass}}
 }
