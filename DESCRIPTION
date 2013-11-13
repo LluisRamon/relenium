@@ -6,13 +6,13 @@ Date: 2013-10-27
 Authors@R: c(person("Aleix", "Ruiz de Villa", role = c("aut", "cre")),
     person("Lluis", "Ramon", role = c("aut", "cre")),
     person("Andreu", "Vall", role = "ctb"))
-Author: Aleix Ruiz de Villa, Lluis Ramon    
+Author: Aleix Ruiz de Villa and Lluis Ramon    
 Maintainer: Aleix Ruiz de Villa <aleixrvr@gmail.com>
 Description: relenium is a third party browser driver for Selenium. The main purpose of this package is making web scrapping easier and powerful.
 Imports: XML, rJava, seleniumJars
 Depends: methods
 BugReports: https://github.com/LluisRamon/relenium/issues
-URL: http://lluisramon.github.io/relenium/ http://docs.seleniumhq.org/
+URL: http://lluisramon.github.io/relenium/, http://docs.seleniumhq.org/
 SystemRequirements: Java, Firefox
 License: GPL-3
 
