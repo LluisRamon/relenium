@@ -3,7 +3,8 @@ Type: Package
 Title: Bindings for the Selenium library
 Version: 0.3.0
 Date: 2013-10-27
-Authors@R: c(person("Aleix", "Ruiz de Villa", role = c("aut", "cre")),
+Authors@R: c(person("Aleix", "Ruiz de Villa", role = c("aut", "cre"), 
+    email = "aleixrvr@gmail.com"),
     person("Lluis", "Ramon", role = c("aut", "cre")),
     person("Andreu", "Vall", role = "ctb"))
 Author: Aleix Ruiz de Villa and Lluis Ramon    
