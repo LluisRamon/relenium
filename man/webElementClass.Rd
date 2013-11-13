@@ -6,13 +6,13 @@
 \title{Class  \code{webElementClass}. A class to represent a web element}
 
 \description{
-  This class is designed to represent and interact with a remote web element.
+  This class is designed to represent and interact with a web element.
 }
 
 \details{
 
   The webElement class is implemented as a reference class
-  (see \code{\link{setRefClass}} for more details). This class is designed to represent and interact with a remote web element.
+  (see \code{\link{setRefClass}} for more details). This class is designed to represent and interact with a web element.
  
   It represents an HTML element. Generally, all interesting operations to do with interacting with a page will be performed through this interface.
  

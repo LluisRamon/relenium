@@ -9,7 +9,7 @@
 
 \section{Relenium classes}{
  
-   The relenium package is implemented with \code{Reference Classes}  (see \code{\link{setRefClass}} for more details). There are two classes: \code{\link{firefoxClass}} and \code{\link{webElementClass}}. The first one, represents a Firefox web browser and the second one an HTML element. There are methods in each class to navigate, select, find elements and to extract data.
+   The relenium package is implemented with \code{Reference Classes}  (see \code{\link{setRefClass}} for more details). No knowledge of them is required, but the use of relenium may seem a little bit different from standard R. There are two classes: \code{\link{firefoxClass}} and \code{\link{webElementClass}}. The first one, represents a Firefox web browser and the second one an HTML element. There are methods in each class to navigate, select, find elements and to extract data.
 
 }
 
