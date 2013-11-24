@@ -272,7 +272,11 @@ webElementClass$methods(submit = function(){
 
 webElementClass$methods(printHtml = function(tagLine = TRUE){
   
-  print(htmlParse(.self$getHtml(tagLine)))
+  if( tagLine ){
+    print(xmlRoot(htmlTreeParse(.self$getHtml(tagLine)))[[1]][[1]])  
+  }else{
+    print(xmlRoot(htmlTreeParse(.self$getHtml(tagLine)))[[1]])  
+  }
   
   return()
 })
