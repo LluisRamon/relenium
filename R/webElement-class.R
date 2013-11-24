@@ -262,6 +262,7 @@ webElementClass$methods(show = function(){
   tagName <- .self$getTagName()
   print(paste("Object from class webElement. Tag:", tagName, ". Attributes:"))
   print(.self$getAllAttributes())
+  
 })
 
 webElementClass$methods(submit = function(){

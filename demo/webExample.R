@@ -1,4 +1,5 @@
 #require(relenium)
+#require(XML)
 
 firefox <- firefoxClass$new()
 firefox$get("http://lluisramon.github.io/relenium/toyPageExample.html")
@@ -11,6 +12,9 @@ inputElement$sendKeys(key = "ENTER")
 
 buttonElement <- firefox$findElementByXPath("//*[@id='main_content']/a")
 buttonElement$click()
+
+infoTable <- firefox$findElementByXPath("//*[@id='myModal']/div/div/div/table")
+readHTMLTable(infoTable$getHtml(), header = TRUE)[[1]] # Using XML Package
 
 buttonElement <- firefox$findElementByXPath("//*[@id='myModal']/div/div/div/button")
 buttonElement$click()
