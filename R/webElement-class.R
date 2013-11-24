@@ -152,8 +152,12 @@ webElementClass$methods(getFirstSelectedOption = function(){
   }
 })
 
-webElementClass$methods(getHtml = function(){
-  return(.self$getAttribute("innerHTML"))
+webElementClass$methods(getHtml = function(tagLine = TRUE){
+  if( tagLine ){
+    return(.self$getAttribute("outerHTML"))
+  }else{
+    return(.self$getAttribute("innerHTML"))    
+  }
 })
 
 webElementClass$methods(getId = function(){
@@ -259,9 +263,9 @@ webElementClass$methods(submit = function(){
   return(invisible())
 })
 
-webElementClass$methods(printHtml = function(){
+webElementClass$methods(printHtml = function(tagLine = TRUE){
   
-  print(htmlParse(.self$getHtml()))
+  print(htmlParse(.self$getHtml(tagLine)))
   
   return()
 })

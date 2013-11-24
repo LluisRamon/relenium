@@ -39,12 +39,12 @@
        \item{\code{click()}:}{Click this element.} 
        \item{\code{getAttribute(stringName = "")}:}{Get the value of a the given attribute of the element.} 
        \item{\code{getCssValue(stringName = "")}:}{Get the value of a given CSS property. } 
-       \item{\code{getHtml()}:}{Get the inner html code of this element} 
+       \item{\code{getHtml(tagLine = TRUE)}:}{Get the inner html code of this element. If \code{tagLine = TRUE}, the code includes the tag line code.} 
        \item{\code{getId()}:}{Get the id of this element. Returns a character.} 
        \item{\code{getSize()}:}{Returns a vector with the height and the width (in this order) of the rendered element.} 
        \item{\code{getTagName()}:}{Get the tag name of this element. } 
        \item{\code{getText()}:}{Get the visible text} 
-       \item{\code{printHtml()}:}{Parse and print the inner html code of this element. It is like getHtml but it returns the html code in a more readable form.}
+       \item{\code{printHtml(tagLine = TRUE)}:}{Parse and print the inner html code of this element. It is like getHtml but it returns the html code in a more readable form. If \code{tagLine = TRUE}, the code includes the tag line code.}
        \item{\code{isDisplayed()}:}{Is this element displayed or not?} 
        \item{\code{isEnabled()}:}{Is the element currently enabled or not? This will generally return true for everything but disabled input elements}
        \item{\code{isSelected()}:}{Determine whether or not this element is selected or not. This operation only applies to input elements such as checkboxes, options in a select and radio buttons. It returns True if the element is currently selected or checked, false otherwise.} 
