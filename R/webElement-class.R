@@ -130,6 +130,12 @@ webElementClass$methods(getAllSelectedOptions = function(){
   }
 })
 
+webElementClass$methods(getAllAttributes = function(){
+  htmlTxt <- .self$getHtml()
+  treeTxt <- htmlTreeParse(htmlTxt)
+  xmlAttrs(treeTxt[[1]][[1]][[1]])
+})
+
 webElementClass$methods(getAttribute = function(stringName = ""){
   return(.self$tryExc(J(javaWebElement, "getAttribute", stringName)))
 })
@@ -255,7 +261,7 @@ webElementClass$methods(sendKeys = function(text = NULL, keys = NULL){
 webElementClass$methods(show = function(){
   tagName <- .self$getTagName()
   print(paste("Object from class webElement. Tag:", tagName))
-  
+  print(.self$getAllAttributes())
 })
 
 webElementClass$methods(submit = function(){

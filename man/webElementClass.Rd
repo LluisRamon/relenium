@@ -37,6 +37,7 @@
     \describe{
        \item{\code{clear()}:}{If this element is a text entry element, this will clear the value.} 
        \item{\code{click()}:}{Click this element.} 
+       \item{\code{getAllAttributes()}:}{All the attributes from the selected tag.} 
        \item{\code{getAttribute(stringName = "")}:}{Get the value of a the given attribute of the element.} 
        \item{\code{getCssValue(stringName = "")}:}{Get the value of a given CSS property. } 
        \item{\code{getHtml(tagLine = TRUE)}:}{Get the inner html code of this element. If \code{tagLine = TRUE}, the code includes the tag line code.} 
