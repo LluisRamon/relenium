@@ -74,7 +74,7 @@ firefoxClass$methods(forward = function(){
   return(invisible())
 })
 
-firefoxClass$methods(get = function(url){
+firefoxClass$methods(get = function(url=""){
   .self$tryExc(J(javaDriver, "get", url))
   return(invisible())
 })

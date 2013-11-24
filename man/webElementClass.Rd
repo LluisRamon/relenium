@@ -35,21 +35,21 @@
   \subsection{Navigate and web data extraction}{
     
     \describe{
-       \item{\code{clear}:}{If this element is a text entry element, this will clear the value.} 
-       \item{\code{click}:}{Click this element.} 
-       \item{\code{getAttribute}:}{Get the value of a the given attribute of the element.} 
-       \item{\code{getCssValue}:}{Get the value of a given CSS property.} 
-       \item{\code{getHtml}:}{Get the inner html code of this element.} 
-       \item{\code{getId}:}{Get the id of this element.} 
-       \item{\code{getSize}:}{What is the width and height of the rendered element?} 
-       \item{\code{getTagName}:}{Get the tag name of this element.} 
-       \item{\code{getText}:}{Get the visible text} 
-       \item{\code{printHtml}:}{Parse and print the inner html code of this element. It is like getHtml but it returns the html code in a more readable form.}
-       \item{\code{isDisplayed}:}{Is this element displayed or not?} 
-       \item{\code{isEnabled}:}{Is the element currently enabled or not? This will generally return true for everything but disabled input elements}
-       \item{\code{isSelected}:}{Determine whether or not this element is selected or not. This operation only applies to input elements such as checkboxes, options in a select and radio buttons. It returns True if the element is currently selected or checked, false otherwise.} 
-       \item{\code{sendKeys}:}{Use this method to simulate typing into an element, which may set its value.} 
-       \item{\code{submit}:}{If this current element is a form, or an element within a form, then this will be submitted to the remote server.} 
+       \item{\code{clear()}:}{If this element is a text entry element, this will clear the value.} 
+       \item{\code{click()}:}{Click this element.} 
+       \item{\code{getAttribute(stringName = "")}:}{Get the value of a the given attribute of the element.} 
+       \item{\code{getCssValue(stringName = "")}:}{Get the value of a given CSS property. } 
+       \item{\code{getHtml()}:}{Get the inner html code of this element} 
+       \item{\code{getId()}:}{Get the id of this element. Returns a character.} 
+       \item{\code{getSize()}:}{Returns a vector with the height and the width (in this order) of the rendered element.} 
+       \item{\code{getTagName()}:}{Get the tag name of this element. } 
+       \item{\code{getText()}:}{Get the visible text} 
+       \item{\code{printHtml()}:}{Parse and print the inner html code of this element. It is like getHtml but it returns the html code in a more readable form.}
+       \item{\code{isDisplayed()}:}{Is this element displayed or not?} 
+       \item{\code{isEnabled()}:}{Is the element currently enabled or not? This will generally return true for everything but disabled input elements}
+       \item{\code{isSelected()}:}{Determine whether or not this element is selected or not. This operation only applies to input elements such as checkboxes, options in a select and radio buttons. It returns True if the element is currently selected or checked, false otherwise.} 
+       \item{\code{sendKeys(text = NULL, keys = "")}:}{Use this method to simulate typing into an element, which may set its value. The argument text should be a character.} 
+       \item{\code{submit()}:}{If this current element is a form, or an element within a form, then this will be submitted to the remote server.} 
        }
   }
   
@@ -57,24 +57,24 @@
       % select and Deselect java doc shttp://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/support/ui/Select.html
       These apply to web elements with tag 'select'.
      \describe{
-       \item{\code{isMultiple}:}{Whether this select element support selecting multiple options at the same time? This is done by checking the value of the "multiple" attribute.} 
-       \item{\code{getOptions}:}{Use this method to get all options belonging to this select tag}
-       \item{\code{getAllSelectedOptions}:}{All selected options belonging to this select tag} 
-       \item{\code{getFirstSelectedOption}:}{he first selected option in this select tag (or the currently selected option in a normal select)} 
-       \item{\code{selectByVisibleText}:}{Select all options that display text matching the argument. That is, when given "Bar" this would select an option like: <option value="foo">Bar</option>}    
-       \item{\code{selectByIndex}:}{Select the option at the given index. This is done by examing the "index" attribute of an element, and not merely by counting.} 
-       \item{\code{selectByValue}:}{Select all options that have a value matching the argument. That is, when given "foo" this would select an option like: <option value="foo">Bar</option>} 
-       \item{\code{deselectAll}:}{Clear all selected entries. This is only valid when the SELECT supports multiple selections.} 
-       \item{\code{deselectByIndex}:}{Deselect the option at the given index. This is done by examing the "index" attribute of an element, and not merely by counting.} 
-       \item{\code{deselectByValue}:}{Deselect all options that have a value matching the argument. That is, when given "foo" this would deselect an option like: <option value="foo">Bar</option>} 
-       \item{\code{deselectByVisibleText}:}{Deselect all options that display text matching the argument. That is, when given "Bar" this would deselect an option like: <option value="foo">Bar</option>} 
+       \item{\code{isMultiple()}:}{Whether this select element support selecting multiple options at the same time? This is done by checking the value of the "multiple" attribute.} 
+       \item{\code{getOptions()}:}{Use this method to get all options belonging to this select tag. Returns a list of \code{\link{webElementClass}} objects.}
+       \item{\code{getAllSelectedOptions}:}{All selected options belonging to this select tag. Returns a list of \code{\link{webElementClass}} objects.} 
+       \item{\code{getFirstSelectedOption()}:}{he first selected option in this select tag (or the currently selected option in a normal select. Returns a \code{\link{webElementClass}} object.)} 
+       \item{\code{selectByVisibleText(stringName = "")}:}{Select all options that display text matching the argument. That is, when given "Bar" this would select an option like: <option value="foo">Bar</option>}    
+       \item{\code{selectByIndex(ind = 1)}:}{Select the option at the given index. This is done by examing the "index" attribute of an element, and not merely by counting.} 
+       \item{\code{selectByValue(stringName = "")}:}{Select all options that have a value matching the argument. That is, when given "foo" this would select an option like: <option value="foo">Bar</option>} 
+       \item{\code{deselectAll()}:}{Clear all selected entries. This is only valid when the SELECT supports multiple selections.} 
+       \item{\code{deselectByIndex(ind = 1)}:}{Deselect the option at the given index. This is done by examing the "index" attribute of an element, and not merely by counting.} 
+       \item{\code{deselectByValue(stringName = "")}:}{Deselect all options that have a value matching the argument. That is, when given "foo" this would deselect an option like: <option value="foo">Bar</option>} 
+       \item{\code{deselectByVisibleText(stringName = "")}:}{Deselect all options that display text matching the argument. That is, when given "Bar" this would deselect an option like: <option value="foo">Bar</option>} 
 
     }
    }
    
     \subsection{Locating elements}{
   
-    There are diferent methods to find a single element in a page:
+    There are diferent methods to find a single element in a page. All the functions from the 'findElement/s' family have the same argument stringName = "". Functions of type 'finElement' return a \code{\link{webElementClass}} object. Functions of type 'finElements' return a list of \code{\link{\code{\link{webElementClass}} objectClass}} objects. 
     % Java Doc http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/By.html
    
     \describe{

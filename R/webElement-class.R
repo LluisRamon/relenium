@@ -9,9 +9,6 @@ webElementClass$methods(initialize = function(javaObj, ...){
   javaKeys <<- javaKeysClass$new()
   keys <<- javaKeys$keysNames
 
-#   javaWebElement$execute()
-#   javaWebElement$execute("return arguments[0].attributes);")
-
   if(javaWebElement$getTagName() == "select"){
     javaSelect <<- .self$tryExc(new(J("org.openqa.selenium.support.ui.Select"), javaObj))
     if( is.null(javaSelect) ){
@@ -41,23 +38,23 @@ webElementClass$methods(deselectAll = function(){
   return(invisible())
 })
 
-webElementClass$methods(deselectByIndex = function(ind){
+webElementClass$methods(deselectByIndex = function(ind = 1){
   if( !is.null( javaSelect) ){
     .self$tryExc(J(javaSelect, "deselectByIndex", ind))
   }
   return(invisible())
 })
 
-webElementClass$methods(deselectByValue = function(characterName){
+webElementClass$methods(deselectByValue = function(stringName = ""){
   if( !is.null( javaSelect) ){
-    .self$tryExc(J(javaSelect, "deselectByValue", characterName))
+    .self$tryExc(J(javaSelect, "deselectByValue", stringName))
   }
   return(invisible())
 })
 
-webElementClass$methods(deselectByVisibleText = function(characterName){
+webElementClass$methods(deselectByVisibleText = function(stringName = ""){
   if( !is.null( javaSelect) ){
-    .self$tryExc(J(javaSelect, "deselectByVisibleText", characterName))
+    .self$tryExc(J(javaSelect, "deselectByVisibleText", stringName))
   }
   return(invisible())
 })
@@ -72,7 +69,7 @@ findNames <- c("ByClassName", "ByCssSelector", "ById",
 findNamesS <- paste("findElement", findNames, sep = "")
 resFun <- lapply(findNamesS, function(auxN){
   bodyTxt <- paste("{
-    webElement <- .self$tryExc(J(javaWebElement, '", auxN, "', argName))
+    webElement <- .self$tryExc(J(javaWebElement, '", auxN, "', stringName))
     if( !is.null(webElement) ){
       webElement <- webElementClass$new(webElement)
       return(webElement)
@@ -80,7 +77,7 @@ resFun <- lapply(findNamesS, function(auxN){
       return(NULL)
     }
   }", sep = "")
-  auxFun <- function(argName){print(3)}
+  auxFun <- function(stringName = ""){print(3)}
   body(auxFun) <- {parse(text = bodyTxt)}
   return(auxFun)
   })
@@ -90,7 +87,7 @@ webElementClass$methods(resFun)
 findNamesP <- paste("findElements", findNames, sep = "")
 resFun <- lapply(findNamesP, function(auxN){
   bodyTxt <- paste("{
-    elements <- .self$tryExc(J(javaWebElement, '", auxN,"', argName))
+    elements <- .self$tryExc(J(javaWebElement, '", auxN,"', stringName))
     if( !is.null(elements) ){
       elements <- as.list(elements)
       elements <- lapply(elements, function(javaObject){
@@ -102,7 +99,7 @@ resFun <- lapply(findNamesP, function(auxN){
       return(NULL)
     }
   }", sep = "")
-  auxFun <- function(argName){print(3)}
+  auxFun <- function(stringName = ""){print(3)}
   body(auxFun) <- {parse(text = bodyTxt)}
   return(auxFun)
 })
@@ -133,11 +130,11 @@ webElementClass$methods(getAllSelectedOptions = function(){
   }
 })
 
-webElementClass$methods(getAttribute = function(stringName){
+webElementClass$methods(getAttribute = function(stringName = ""){
   return(.self$tryExc(J(javaWebElement, "getAttribute", stringName)))
 })
 
-webElementClass$methods(getCssValue = function(stringName){
+webElementClass$methods(getCssValue = function(stringName = ""){
   return(.self$tryExc(J(javaWebElement, "getCssValue", stringName)))
 })
 
@@ -183,7 +180,11 @@ webElementClass$methods(getOptions = function(){
 
 
 webElementClass$methods(getSize = function(){
-  return(.self$tryExc(J(javaWebElement, "getSize")))
+  objSize <- .self$tryExc(J(javaWebElement, "getSize"))
+  objHeight <- J(objSize, "getHeight")
+  objWidth <- J(objSize, "getWidth")
+
+  return(c(objHeight, objWidth))
 })
 
 webElementClass$methods(getTagName = function(){
@@ -214,23 +215,23 @@ webElementClass$methods(isSelected = function(){
   return(.self$tryExc(J(javaWebElement, "isSelected")))
 })
 
-webElementClass$methods(selectByIndex = function(ind){
+webElementClass$methods(selectByIndex = function(ind = 1){
   if( !is.null( javaSelect) ){
     .self$tryExc(J(javaSelect, "selectByIndex", ind))
   }
   return(invisible())
 })
 
-webElementClass$methods(selectByValue = function(characterName){
+webElementClass$methods(selectByValue = function(stringName = ""){
   if( !is.null( javaSelect) ){
-    .self$tryExc(J(javaSelect, "selectByValue", characterName))
+    .self$tryExc(J(javaSelect, "selectByValue", stringName))
   }
   return(invisible())
 })
 
-webElementClass$methods(selectByVisibleText = function(characterName){
+webElementClass$methods(selectByVisibleText = function(stringName = ""){
   if( !is.null( javaSelect) ){
-    .self$tryExc(J(javaSelect, "selectByVisibleText", characterName))
+    .self$tryExc(J(javaSelect, "selectByVisibleText", stringName))
   }
   return(invisible())
 })
@@ -248,7 +249,8 @@ webElementClass$methods(sendKeys = function(text = NULL, keys = NULL){
 })
 
 webElementClass$methods(show = function(){
-  print("Web element. Object from class webElement.")
+  tagName <- .self$getTagName()
+  print(paste("Object from class webElement. Tag:", tagName))
   
 })
 

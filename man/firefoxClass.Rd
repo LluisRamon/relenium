@@ -34,14 +34,14 @@ A simple \code{firefoxClass} example can be found at the end of this file. You c
 
       \describe{
 
-           \item{\code{get}:}{Use this method to load a new web page in the current browser window.}
-           \item{\code{getTitle}:}{Use this method to get the title of the current page, with leading and trailing whitespace stripped, or null if one is not already set.}
-           \item{\code{getCurrentUrl}:}{Use this method to get a string representing the current URL that the browser is looking at.}
-           \item{\code{getPageSource}:}{Use this method to get the source of the last loaded page.}
-           \item{\code{printHtml}:}{Use this method to parse and print the the html code of the last loaded page. It is like getPageSource but it returns the html code in a more readable form.}
-           \item{\code{forward}:}{Use this method to move a single "item" forward in the browser's history. Does nothing if we are on the latest page viewed.}
-           \item{\code{back}:}{Use this method to move back a single "item" in the browser's history.}
-           \item{\code{close}:}{Use this method to close the Firefox browser.} 
+           \item{\code{get(url = "")}:}{Use this method to load a new web page in the current browser window.}
+           \item{\code{getTitle()}:}{Use this method to get the title of the current page, with leading and trailing whitespace stripped, or null if one is not already set.}
+           \item{\code{getCurrentUrl()}:}{Use this method to get a string representing the current URL that the browser is looking at.}
+           \item{\code{getPageSource()}:}{Use this method to get the source of the last loaded page.}
+           \item{\code{printHtml()}:}{Use this method to parse and print the the html code of the last loaded page. It is like getPageSource but it returns the html code in a more readable form.}
+           \item{\code{forward()}:}{Use this method to move a single "item" forward in the browser's history. Does nothing if we are on the latest page viewed.}
+           \item{\code{back()}:}{Use this method to move back a single "item" in the browser's history.}
+           \item{\code{close()}:}{Use this method to close the Firefox browser.} 
 
       }
       % Thre documentation links
@@ -53,7 +53,7 @@ A simple \code{firefoxClass} example can be found at the end of this file. You c
 
   \subsection{Locating elements}{
  
-    There are diferent methods to find a single element in a page. This methods will  locate and return a \code{\link{webElementClass}}.
+    There are diferent methods to find a single element in a page. All the functions from the 'findElement/s' family have the same argument stringName = "". Functions of type 'finElement' return a \code{\link{webElementClass}} object. Functions of type 'finElements' return a list of \code{\link{webElementClass}} objects. 
     % Java Doc http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/By.html
   
     \describe{

@@ -5,8 +5,7 @@ Version: 0.3.0
 Date: 2013-10-27
 Authors@R: c(person("Aleix", "Ruiz de Villa", role = c("aut", "cre"), 
     email = "aleixrvr@gmail.com"),
-    person("Lluis", "Ramon", role = c("aut", "cre")),
-    person("Andreu", "Vall", role = "ctb"))
+    person("Lluis", "Ramon", role = c("aut", "cre")))
 Author: Aleix Ruiz de Villa and Lluis Ramon    
 Maintainer: Aleix Ruiz de Villa <aleixrvr@gmail.com>
 Description: relenium is a third party browser driver for Selenium. The main purpose of this package is making web scrapping easier and powerful.
