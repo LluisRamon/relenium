@@ -47,7 +47,7 @@
 		</div>
 
 		<div id="header_wrap" class="outer">
-			<header class="inner">
+			<header class="inner" style="max-width:800px;">
 				<a id="forkme_banner" href="https://github.com/LluisRamon/relenium">View on GitHub</a>
 
 				<h1 id="project_title">Relenium</h1>
@@ -57,52 +57,51 @@
 		</div>     
 
 
-		<div id="main_content_wrap" class="outer">
-			<section id="main_content" class="inner">
+		<div id="main_content_wrap" class="outer" >
+			<section id="main_content" class="inner" style="max-width:800px;">
 				<h2>Example</h2>
 				
-<p> Relenium has been implemented using reference classes. No knowledge of them is required, but the use of relenium may seem a little bit different from the standard R. </p>				
+<p> Relenium has been implemented using reference classes. No knowledge of them is required, but its use at the beginning may seem a little bit different from the standard R. </p>				
+
+This demo can be executed directly in the R console by typing 
+<pre><code>require(relenium)
+demo(webExample)
+</code></pre><br>
 				
-<p> To open a new Firefox navigator use the function <code> new </code> .</p>				
-<pre><code>
-require(relenium)
-firefox <- firefoxClass$new()
-</code></pre>
+				
+To open a new Firefox navigator use the function <code>new</code>.				
+<pre><code>firefox <- firefoxClass$new()
+</code></pre><br>
 
-<p> The methods available for the this new navigator are accesed via the operator <code> $ </code>. Use the tab completion to get a list of such methods.</p>
+The methods available for the this new navigator are accesed via the operator <code>$</code>. Use the tab completion to get a list of such methods.
+<pre><code>firefox$ # and press the TAB key
+</code></pre><br>
 
-<pre><code>		
-firefox$ # and press the TAB key
-</code></pre>				
+We go to some url using the function <code>get</code>. 
+<pre><code>firefox$get("http://lluisramon.github.io/relenium/toyPageExample.html")
+</code></pre><br>
 
-<p> We go to some url using the function <code> get </code>. </p>
-<pre><code>		
-firefox$get("http://lluisramon.github.io/relenium/toyPageExample.html")
-</code></pre>
-
-<p> The html from the webpage can be obtained with the <code> getPageSource </code> (and returning a "character") or in a more legible way with the <code> printHtml 	</code> function. </p>
-<pre><code>		
-firefox$getPageSource()
+The html from the webpage can be obtained with the <code>getPageSource</code> (and returning a "character") or in a more legible way with the <code>printHtml</code> function. 
+<pre><code>firefox$getPageSource()
 firefox$printHtml()
-</code></pre>
+</code></pre><br>
 
-<p> The elements in the html code are called web elements in relenium (are objects of the WebElement class). </p>
-<p> To find elements in the html code use the findElement (findElementByClassName, findElementByTagName, ...) family functions 
-to get the first tag or the findElements family to get them all. </p>
+The elements in the html code are called web elements (are objects of the WebElement class). To find elements in the html code use the findElement (findElementByClassName, findElementByTagName, ...) family functions 
+to get the first tag or the findElements family to get them all. 
+
 <p> An easy way to locate an element (tag) in the html tree is using xpaths. You can deduce the xpath yourself or even easier, 
 in simple cases let the navigator tell you. In Chrome, for instance, open the inspector (Tools > Developer Tools ), search the element in the 
 html code and click the right button of the mouse "Copy Xpath". On the other hand, learning xpaths is very useful for webscraping.
 For more information, look at the clear example in the 
 <a href="http://selenium-python.readthedocs.org/en/latest/locating-elements.html#locating-by-xpath"> selenium-python </a> 
-(not official) documentation, and the links therein for more complete documentation.</p>
+(not official) documentation, and the links therein for a more exhaustive documentation.</p>
 
 <p> We are going to give an example of three different elements: an input box, a button and a select. </p>
 
 
 <center><h4> Input Box </h4></center>
-<p> We have searched "input" in the web inspector finding: </p>
-<pre><code>
-&lth4&gt Input box &lt/h4&gt 
+We have searched "input" in the web inspector finding:
+<pre><code>&lth4&gt Input box &lt/h4&gt 
 &ltdiv class="row"&gt 
 &nbsp &ltform class="navbar-form navbar-left" role="search"&gt 
 &nbsp &nbsp <strong> &ltinput type="text" class="form-control"&gt </strong> 
@@ -110,82 +109,77 @@ For more information, look at the clear example in the
 &lt/div&gt 
 </code></pre>
 
-<p> The relevant element is the </em>input</em> tag (in bold), with xpath: <br> <center> <code> //*[@id='main_content']/div[1]/form/input </code> </center> </p>
-
-<p> Now we get the input element with the following code.</p>
-
-<pre><code>		
-inputElement <- firefox$findElementByXPath("//*[@id='main_content']/div[1]/form/input")
+The relevant element is the <em>input</em> tag (in bold), with xpath: <br> <center> <code>//*[@id='main_content']/div[1]/form/input</code></center> 
+Now we get the input element with the following code.
+<pre><code>inputElement <- firefox$findElementByXPath("//*[@id='main_content']/div[1]/form/input")
 </code></pre>
+The <em> inputElement </em> is an object from the webElement class.
 
-<p> The <em> inputElement </em> is an object from the webElement class .</p>
-
-<p> To write in the input box use the function <code> sendKeys </code>. Such function has two purposes: write text 
-and emulate the action of pressing a key.</p>
-<pre><code>		
-inputElement$sendKeys("R Project")
+<p></p>To write into the input box use the function <code>sendKeys</code>. Such function has two purposes: write text 
+and emulate the action of pressing a key.
+<pre><code>inputElement$sendKeys("R Project")
 inputElement$sendKeys(key = "ENTER")
 </code></pre>
-<p> A complete list of the available keys can be obtained from any webElement.</p>
-<pre><code>		
-inputElement$keys
+A complete list of the available keys can be obtained from any webElement.
+<pre><code>inputElement$keys
 </code></pre>
 
 
 <center><h4> Button </h4></center>
-The <em> Data </em> button is an anchor element (<code> a </code>) with html code 
-<pre><code> &lta data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg"&gt Data &lt/a&gt </code></pre>
+The <em> Data </em> button is an anchor element (<code>a</code>) with html code 
+<pre><code> &lta data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg"&gt Data &lt/a&gt </code></pre></p>
 
-<p>To get the element and click the button execute:</p>
-<pre><code>		
-buttonElement <- firefox$findElementByXPath("//*[@id='main_content']/a")
+To get the element and click the button execute:
+<pre><code>buttonElement <- firefox$findElementByXPath("//*[@id='main_content']/a")
 buttonElement$click()
 </code></pre>
 This displays a new window with a data table.
 
-<p>To close the window we call the close button (named <em>x</em> in the html code):</p>
-<pre><code>		
-buttonElement <- firefox$findElementByXPath("//*[@id='myModal']/div/div/div/button")
+
+<p></p>You can get the table information using the <code>readHTMLtable</code> function from the <code>XML</code> package.
+<pre><code>infoTable <- firefox$findElementByXPath("//*[@id='myModal']/div/div/div/table")
+readHTMLTable(infoTable$getHtml(), header = TRUE)[[1]] 
+</code></pre>
+This is shown as an example. In fact it is much more simpler to do:
+<pre><code>readHTMLTable(firefox$getPageSource(), header = TRUE)
+</code></pre></p>
+
+To close the window we call the close button (named <em>x</em> in the html code):
+<pre><code>buttonElement <- firefox$findElementByXPath("//*[@id='myModal']/div/div/div/button")
 buttonElement$click()
 </code></pre>
 
 
 <center><h4>Select</h4></center>
-<p>The select tag has more methods than the other tags. The following code finds the <em>select</em> element and shows its inner code (another way to get its html code is via 
-the function <code>getHtml</code>).</p>
-<pre><code>		
-selectElement <- firefox$findElementByXPath("//*[@id='main_content']/select")
+The select tag has more methods than the other tags. The following code finds the <em>select</em> element and shows its inner code (another way to get its html code is via 
+the function <code>getHtml</code>).
+<pre><code>selectElement <- firefox$findElementByXPath("//*[@id='main_content']/select")
 selectElement$printHtml()
 </code></pre>
-<p>Result:</p>
-<pre><code>
-&ltselect multiple="multiple"&gt
+Result:
+<pre><code>&ltselect multiple="multiple"&gt
 &nbsp &ltoption value="Mango"&gt Mango &lt/option&gt
 &nbsp &ltoption value="Nectarine"&gt Nectarine &lt/option&gt
 &nbsp &ltoption value="Cherry"&gt Cherry &lt/option&gt
 &lt/select&gt	
+</code></pre><br>
+
+Now we can access to its options.
+<pre><code>optsList <- selectElement$getOptions() 
 </code></pre>
-<p> Now we can access to its options </p>
-<pre><code>		
-optsList <- selectElement$getOptions() 
-</code></pre>
-<p> The <em>optsList</em> is a list containing webElements. To get the names of the options we execute <code>getText</code>
-in every of its elements.</p>
-<pre><code>	
-sapply(optsList, function(optEle){
+The <em>optsList</em> is a list containing webElements. To get the names of the options we execute <code>getText</code>
+in every of its elements.
+<pre><code>sapply(optsList, function(optEle){
   optEle$getText()
 })
-</code></pre>
+</code></pre><br>
 
-<p> The items in the list can be selected in many ways (see the package documentation). A simple example is: </p>
-<pre><code>		
-selectElement$selectByValue("Mango")
+The items in the list can be selected in many ways (see the package documentation). A simple example is: 
+<pre><code>selectElement$selectByValue("Mango")
 selectElement$selectByValue("Nectarine")
 </code></pre>
-
-<p> To get a list of all selected options and afterwards deselect them all:</p>
-<pre><code>		
-optsSel <- selectElement$getAllSelectedOptions() 
+To get a list of all selected options and afterwards deselect them all:
+<pre><code>optsSel <- selectElement$getAllSelectedOptions() 
 sapply(optsSel, function(optEle){
   optEle$getText()
 })
@@ -193,9 +187,8 @@ selectElement$deselectAll()
 </code></pre>
 
 <center> <h4> Navigation </h4> </center>
-<p>Finally, we show an example of back/forward navigation and we close the webdriver.</p>
-<pre><code>	
-firefox$get("http://lluisramon.github.io/relenium/")
+Finally, we show an example of back/forward navigation and we close the webdriver.
+<pre><code>firefox$get("http://lluisramon.github.io/relenium/")
 firefox$back()
 firefox$close()
 </code></pre>
