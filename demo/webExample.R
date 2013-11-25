@@ -1,5 +1,5 @@
 #require(relenium)
-#require(XML)
+require(XML)
 
 firefox <- firefoxClass$new()
 firefox$get("http://lluisramon.github.io/relenium/toyPageExample.html")
