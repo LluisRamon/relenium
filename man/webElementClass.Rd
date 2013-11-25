@@ -59,9 +59,9 @@
       These apply to web elements with tag 'select'.
      \describe{
        \item{\code{isMultiple()}:}{Whether this select element support selecting multiple options at the same time? This is done by checking the value of the "multiple" attribute.} 
-       \item{\code{getOptions()}:}{Use this method to get all options belonging to this select tag. Returns a list of \code{\link{webElementClass}} objects.}
-       \item{\code{getAllSelectedOptions}:}{All selected options belonging to this select tag. Returns a list of \code{\link{webElementClass}} objects.} 
-       \item{\code{getFirstSelectedOption()}:}{he first selected option in this select tag (or the currently selected option in a normal select. Returns a \code{\link{webElementClass}} object.)} 
+       \item{\code{getOptions()}:}{Use this method to get all options belonging to this select tag. Returns a list of \code{webElementClass} objects.}
+       \item{\code{getAllSelectedOptions}:}{All selected options belonging to this select tag. Returns a list of \code{webElementClass} objects.} 
+       \item{\code{getFirstSelectedOption()}:}{he first selected option in this select tag (or the currently selected option in a normal select. Returns a \code{webElementClass} object.)} 
        \item{\code{selectByVisibleText(stringName = "")}:}{Select all options that display text matching the argument. That is, when given "Bar" this would select an option like: <option value="foo">Bar</option>}    
        \item{\code{selectByIndex(ind = 1)}:}{Select the option at the given index. This is done by examing the "index" attribute of an element, and not merely by counting.} 
        \item{\code{selectByValue(stringName = "")}:}{Select all options that have a value matching the argument. That is, when given "foo" this would select an option like: <option value="foo">Bar</option>} 
@@ -75,7 +75,7 @@
    
     \subsection{Locating elements}{
   
-    There are diferent methods to find a single element in a page. All the functions from the 'findElement/s' family have the same argument stringName = "". Functions of type 'finElement' return a \code{\link{webElementClass}} object. Functions of type 'finElements' return a list of \code{\link{\code{\link{webElementClass}} objectClass}} objects. 
+    There are diferent methods to find a single element in a page. All the functions from the 'findElement/s' family have the same argument stringName = "". Functions of type 'finElement' return a \code{webElementClass} object. Functions of type 'finElements' return a list of \code{webElementClass} objects. 
     % Java Doc http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/By.html
    
     \describe{
