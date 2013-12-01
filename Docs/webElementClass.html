@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Class 'webElementClass'. A class to represent a web element</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+
+<table width="100%" summary="page for webElementClass {relenium}"><tr><td>webElementClass {relenium}</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Class  <code>webElementClass</code>. A class to represent a web element</h2>
+
+<h3>Description</h3>
+
+<p>This class is designed to represent and interact with a web element.
+</p>
+
+
+<h3>Details</h3>
+
+<p>The webElement class is implemented as a reference class
+(see <code>ReferenceClasses</code> for more details). This class is designed to represent and interact with a web element.
+</p>
+<p>It represents an HTML element. Generally, all interesting operations to do with interacting with a page will be performed through this interface.
+</p>
+<p>You get a <code>webElementClass</code> from <code><a href="firefoxClass.html">firefoxClass</a></code> find methods or from other <code>webElementClass</code>. With this class you can navigate, select, web data extraction and find web elements.
+</p>
+<p>All methods implemented are explained below. Documentation is based in the original Selinum Java documentation. It is possible to access the methods with TAB completion.
+</p>
+<p>An example of <code>webElementClass</code> can be found using <code>demo(package = "relenium")</code>.
+</p>
+
+
+<h3>Fields</h3>
+
+
+<dl>
+<dt><code>keys</code>:</dt><dd><p>This is a list of the available keys that can be used in the 'sendKeys' method. They refer to keys of the keyboard.</p>
+</dd>
+</dl>
+
+
+
+<h3>Methods</h3>
+
+
+
+<h4>Navigate and web data extraction</h4>
+
+
+<dl>
+<dt><code>clear()</code>:</dt><dd><p>If this element is a text entry element, this will clear the value.</p>
+</dd> 
+<dt><code>click()</code>:</dt><dd><p>Click this element.</p>
+</dd> 
+<dt><code>getAllAttributes()</code>:</dt><dd><p>All the attributes from the selected tag.</p>
+</dd> 
+<dt><code>getAttribute(stringName = "")</code>:</dt><dd><p>Get the value of a the given attribute of the element.</p>
+</dd> 
+<dt><code>getCssValue(stringName = "")</code>:</dt><dd><p>Get the value of a given CSS property. </p>
+</dd> 
+<dt><code>getHtml(tagLine = TRUE)</code>:</dt><dd><p>Get the inner html code of this element. If <code>tagLine = TRUE</code>, the code includes the tag line code.</p>
+</dd> 
+<dt><code>getId()</code>:</dt><dd><p>Get the id of this element. Returns a character.</p>
+</dd> 
+<dt><code>getSize()</code>:</dt><dd><p>Returns a vector with the height and the width (in this order) of the rendered element.</p>
+</dd> 
+<dt><code>getTagName()</code>:</dt><dd><p>Get the tag name of this element. </p>
+</dd> 
+<dt><code>getText()</code>:</dt><dd><p>Get the visible text</p>
+</dd> 
+<dt><code>printHtml(tagLine = TRUE)</code>:</dt><dd><p>Parse and print the inner html code of this element. It is like getHtml but it returns the html code in a more readable form. If <code>tagLine = TRUE</code>, the code includes the tag line code.</p>
+</dd>
+<dt><code>isDisplayed()</code>:</dt><dd><p>Is this element displayed or not?</p>
+</dd> 
+<dt><code>isEnabled()</code>:</dt><dd><p>Is the element currently enabled or not? This will generally return true for everything but disabled input elements</p>
+</dd>
+<dt><code>isSelected()</code>:</dt><dd><p>Determine whether or not this element is selected or not. This operation only applies to input elements such as checkboxes, options in a select and radio buttons. It returns True if the element is currently selected or checked, false otherwise.</p>
+</dd> 
+<dt><code>sendKeys(text = NULL, keys = "")</code>:</dt><dd><p>Use this method to simulate typing into an element, which may set its value. The argument text should be a character.</p>
+</dd> 
+<dt><code>submit()</code>:</dt><dd><p>If this current element is a form, or an element within a form, then this will be submitted to the remote server.</p>
+</dd> 
+</dl>
+
+
+
+
+<h4>Select methods</h4>
+
+
+<p>These apply to web elements with tag 'select'.
+</p>
+
+<dl>
+<dt><code>isMultiple()</code>:</dt><dd><p>Whether this select element support selecting multiple options at the same time? This is done by checking the value of the &quot;multiple&quot; attribute.</p>
+</dd> 
+<dt><code>getOptions()</code>:</dt><dd><p>Use this method to get all options belonging to this select tag. Returns a list of <code>webElementClass</code> objects.</p>
+</dd>
+<dt><code>getAllSelectedOptions</code>:</dt><dd><p>All selected options belonging to this select tag. Returns a list of <code>webElementClass</code> objects.</p>
+</dd> 
+<dt><code>getFirstSelectedOption()</code>:</dt><dd><p>he first selected option in this select tag (or the currently selected option in a normal select. Returns a <code>webElementClass</code> object.)</p>
+</dd> 
+<dt><code>selectByVisibleText(stringName = "")</code>:</dt><dd><p>Select all options that display text matching the argument. That is, when given &quot;Bar&quot; this would select an option like: &lt;option value=&quot;foo&quot;&gt;Bar&lt;/option&gt;</p>
+</dd>    
+<dt><code>selectByIndex(ind = 1)</code>:</dt><dd><p>Select the option at the given index. This is done by examing the &quot;index&quot; attribute of an element, and not merely by counting.</p>
+</dd> 
+<dt><code>selectByValue(stringName = "")</code>:</dt><dd><p>Select all options that have a value matching the argument. That is, when given &quot;foo&quot; this would select an option like: &lt;option value=&quot;foo&quot;&gt;Bar&lt;/option&gt;</p>
+</dd> 
+<dt><code>deselectAll()</code>:</dt><dd><p>Clear all selected entries. This is only valid when the SELECT supports multiple selections.</p>
+</dd> 
+<dt><code>deselectByIndex(ind = 1)</code>:</dt><dd><p>Deselect the option at the given index. This is done by examing the &quot;index&quot; attribute of an element, and not merely by counting.</p>
+</dd> 
+<dt><code>deselectByValue(stringName = "")</code>:</dt><dd><p>Deselect all options that have a value matching the argument. That is, when given &quot;foo&quot; this would deselect an option like: &lt;option value=&quot;foo&quot;&gt;Bar&lt;/option&gt;</p>
+</dd> 
+<dt><code>deselectByVisibleText(stringName = "")</code>:</dt><dd><p>Deselect all options that display text matching the argument. That is, when given &quot;Bar&quot; this would deselect an option like: &lt;option value=&quot;foo&quot;&gt;Bar&lt;/option&gt;</p>
+</dd> 
+</dl>
+
+
+
+
+<h4>Locating elements</h4>
+
+<p>There are diferent methods to find a single element in a page. All the functions from the 'findElement/s' family have the same argument stringName = &quot;&quot;. Functions of type 'finElement' return a <code>webElementClass</code> object. Functions of type 'finElements' return a list of <code>webElementClass</code> objects. 
+
+</p>
+
+<dl>
+<dt><code>findElementByXPath</code>:</dt><dd><p>Use this method when you know the <EM>xpath</EM> of an element. With this strategy, the first element matching the <EM>xpath</EM> will be returned.</p>
+</dd>
+<dt><code>findElementByClassName</code>:</dt><dd><p>Use this method when you know <EM>class</EM> attribute of an element. With this strategy, the first element with the <EM>class</EM> attribute value matching the location will be returned.</p>
+</dd>
+<dt><code>findElementByCssSelector</code>:</dt><dd><p>Use this method to find elements via the driver's underlying W3 Selector engine. If the browser does not implement the Selector API, a best effort is made to emulate the API.</p>
+</dd>
+<dt><code>findElementById</code>:</dt><dd><p>Use this method when you know <EM>id</EM> attribute of an element. With this strategy, the first element with the <EM>id</EM> attribute value matching the location will be returned.</p>
+</dd>
+<dt><code>findElementByName</code>:</dt><dd><p>Use this method when you know the <EM>name</EM> attribute of an element. With this strategy, the first element with the <EM>name</EM> attribute value matching the location will be returned.</p>
+</dd>
+<dt><code>findElementByLinkText</code>:</dt><dd><p>Use this method when you know <EM>text</EM> of an element. With this strategy, the first element matching the <EM>exact text</EM> will be returned.</p>
+</dd>    
+<dt><code>findElementByPartialLinkText</code>:</dt><dd><p>Use this method when you know <EM>text</EM> of an element. With this strategy, the first element matching the <EM>partial text</EM> will be returned.</p>
+</dd>
+<dt><code>findElementByTagName</code>:</dt><dd><p>Use this method when you know the <EM>tag name</EM> of an element. With this strategy, the first element matching the <EM>tag name</EM> will be returned.</p>
+</dd>
+</dl>
+
+<p>To find multiple elements use the following methods in the same way as the previous ones. Note that these methods will return a list.
+</p>
+
+<ul>
+<li> <p><code>findElementsByXPath</code>
+</p>
+</li>
+<li> <p><code>findElementsByClassName</code>
+</p>
+</li>
+<li> <p><code>findElementsByCssSelector</code>
+</p>
+</li>
+<li> <p><code>findElementsById</code>
+</p>
+</li>
+<li> <p><code>findElementByPartialLinkText</code>
+</p>
+</li>
+<li> <p><code>findElementsByLinkText</code>
+</p>
+</li>
+<li> <p><code>findElementsByName</code>
+</p>
+</li>
+<li> <p><code>findElementsByPartialLinkText</code>
+</p>
+</li>
+<li> <p><code>findElementsByTagName</code>
+</p>
+</li></ul>
+
+
+
+
+<h3>See Also</h3>
+
+<p><code>ReferenceClasses</code>, <code><a href="relenium.html">relenium-package</a></code>, <code><a href="firefoxClass.html">firefoxClass</a></code>
+</p>
+
+<hr><div align="center">[Package <em>relenium</em> version 0.3.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Class 'firefoxClass'. A class to represent Firefox web...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+
+<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<script src="http://yandex.st/highlightjs/7.3/languages/r.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head><body>
+
+<table width="100%" summary="page for firefoxClass {relenium}"><tr><td>firefoxClass {relenium}</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Class <code>firefoxClass</code>. A class to represent Firefox web browser</h2>
+
+<h3>Description</h3>
+
+<p>This class is designed to represent and interact with a Firefox web browser.
+</p>
+
+
+<h3>Details</h3>
+
+<p>The firefox class is implemented as a reference class
+(see <code>ReferenceClasses</code> for more details). This class is designed to represent and interact with a Firefox web browser.
+</p>
+<p>You can open a new Firefox web browser with <code>firefoxClass$new()</code>, navigate to any web page, web data extraction and find web elements by diferent ways like tag name, text, id, xpath and others.
+</p>
+<p>All methods implemented are explained below. Documentation is based in the original Selinum Java documentation. It is possible to access the methods with TAB completion.
+</p>
+<p>Normally the Firefox binary is assumed to be in the default location for your particular operating system:
+</p>
+
+<ul>
+<li><p> Linux <EM>firefox (found using &quot;which&quot;)</EM>
+</p>
+</li>
+<li><p> Mac <EM>/Applications/Firefox.app/Contents/MacOS/firefox-bin</EM>
+</p>
+</li>
+<li><p> Windows <EM>%PROGRAMFILES%\Mozilla Firefox\firefox.exe</EM>
+</p>
+</li></ul>
+ 
+<p>A simple <code>firefoxClass</code> example can be found at the end of this file. You can get a more sofisticated one using <code>demo(package = "relenium")</code>.
+</p>
+
+
+<h3>Methods</h3>
+
+
+
+<h4>Navigate and web data extraction</h4>
+
+
+<dl>
+<dt><code>get(url = "")</code>:</dt><dd><p>Use this method to load a new web page in the current browser window.</p>
+</dd>
+<dt><code>getTitle()</code>:</dt><dd><p>Use this method to get the title of the current page, with leading and trailing whitespace stripped, or null if one is not already set.</p>
+</dd>
+<dt><code>getCurrentUrl()</code>:</dt><dd><p>Use this method to get a string representing the current URL that the browser is looking at.</p>
+</dd>
+<dt><code>getPageSource()</code>:</dt><dd><p>Use this method to get the source of the last loaded page.</p>
+</dd>
+<dt><code>printHtml()</code>:</dt><dd><p>Use this method to parse and print the the html code of the last loaded page. It is like getPageSource but it returns the html code in a more readable form.</p>
+</dd>
+<dt><code>forward()</code>:</dt><dd><p>Use this method to move a single &quot;item&quot; forward in the browser's history. Does nothing if we are on the latest page viewed.</p>
+</dd>
+<dt><code>back()</code>:</dt><dd><p>Use this method to move back a single &quot;item&quot; in the browser's history.</p>
+</dd>
+<dt><code>close()</code>:</dt><dd><p>Use this method to close the Firefox browser.</p>
+</dd> 
+</dl>
+
+
+
+
+
+
+
+
+<h4>Locating elements</h4>
+
+<p>There are diferent methods to find a single element in a page. All the functions from the 'findElement/s' family have the same argument stringName = &quot;&quot;. Functions of type 'finElement' return a <code><a href="webElementClass.html">webElementClass</a></code> object. Functions of type 'finElements' return a list of <code><a href="webElementClass.html">webElementClass</a></code> objects. 
+
+</p>
+
+<dl>
+<dt><code>findElementByXPath</code>:</dt><dd><p>Use this method when you know the <EM>xpath</EM> of an element. With this strategy, the first element matching the <EM>xpath</EM> will be returned.</p>
+</dd>
+<dt><code>findElementByClassName</code>:</dt><dd><p>Use this method when you know <EM>class</EM> attribute of an element. With this strategy, the first element with the <EM>class</EM> attribute value matching the location will be returned.</p>
+</dd>
+<dt><code>findElementByCssSelector</code>:</dt><dd><p>Use this method to find elements via the driver's underlying W3 Selector engine. If the browser does not implement the Selector API, a best effort is made to emulate the API.</p>
+</dd>
+<dt><code>findElementById</code>:</dt><dd><p>Use this method when you know <EM>id</EM> attribute of an element. With this strategy, the first element with the <EM>id</EM> attribute value matching the location will be returned.</p>
+</dd>
+<dt><code>findElementByName</code>:</dt><dd><p>Use this method when you know the <EM>name</EM> attribute of an element. With this strategy, the first element with the <EM>name</EM> attribute value matching the location will be returned.</p>
+</dd>
+<dt><code>findElementByLinkText</code>:</dt><dd><p>Use this method when you know <EM>text</EM> of an element. With this strategy, the first element matching the <EM>exact text</EM> will be returned.</p>
+</dd>   
+<dt><code>findElementByPartialLinkText</code>:</dt><dd><p>Use this method when you know <EM>text</EM> of an element. With this strategy, the first element matching the <EM>partial text</EM> will be returned.</p>
+</dd>
+<dt><code>findElementByTagName</code>:</dt><dd><p>Use this method when you know the <EM>tag name</EM> of an element. With this strategy, the first element matching the <EM>tag name</EM> will be returned.</p>
+</dd>
+</dl>
+
+<p>To find multiple elements use the following methods in the same way as the previous ones. Note that these methods will return a list.
+</p>
+
+<ul>
+<li> <p><code>findElementsByXPath</code>
+</p>
+</li>
+<li> <p><code>findElementsByClassName</code>
+</p>
+</li>
+<li> <p><code>findElementsByCssSelector</code>
+</p>
+</li>
+<li> <p><code>findElementsById</code>
+</p>
+</li>
+<li> <p><code>findElementByPartialLinkText</code>
+</p>
+</li>
+<li> <p><code>findElementsByLinkText</code>
+</p>
+</li>
+<li> <p><code>findElementsByName</code>
+</p>
+</li>
+<li> <p><code>findElementsByPartialLinkText</code>
+</p>
+</li>
+<li> <p><code>findElementsByTagName</code>
+</p>
+</li></ul>
+
+
+
+<h3>See Also</h3>
+
+<p><code>ReferenceClasses</code>, <code><a href="relenium.html">relenium-package</a></code>, <code><a href="webElementClass.html">webElementClass</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class="r">
+  ## Not run: 
+##D     require(relenium)
+##D 
+##D     firefox &lt;- firefoxClass$new()
+##D     firefox$get(&quot;https://github.com/LluisRamon/relenium&quot;)
+##D     firefox$getTitle()
+##D     firefox$close()
+##D   
+## End(Not run)
+
+</code></pre>
+
+
+<hr><div align="center">[Package <em>relenium</em> version 0.3.0 <a href="00Index.html">Index</a>]</div>
+</body></html>
