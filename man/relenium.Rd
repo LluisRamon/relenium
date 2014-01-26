@@ -4,12 +4,12 @@
 \title{Relenium: Selenium for R}
 
 \description{
-    Selenium is a popular suite of tools specifically for automating web browsers. Selenium allows users to write tests in a number of popular programming languages including Java. The relenium package is intended to provide access to Selenium and use it to boost web navigation and to ease the path for web scraping in R.
+    Selenium is a popular suite of tools specifically designed for automating web browsers. Selenium allows users to write tests in a number of popular programming languages including Java. The relenium package is intended to provide access to Selenium and to use it to boost web navigation and to ease the path for web scraping in R.
 }
 
 \section{Relenium classes}{
  
-   The relenium package is implemented with \code{Reference Classes}  (see \code{\link{ReferenceClasses}} for more details). No knowledge of them is required, but the use of relenium may seem a little bit different from standard R. There are two classes: \code{\link{firefoxClass}} and \code{\link{webElementClass}}. The first one, represents a Firefox web browser and the second one an HTML element. There are methods in each class to navigate, select, find elements and to extract data.
+   The relenium package is implemented with \code{Reference Classes}  (see \code{\link{ReferenceClasses}} for more details). No knowledge of them is required, but the use of relenium may seem a little bit different from standard R. There are two classes: \code{\link{firefoxClass}} and \code{\link{webElementClass}}. The first one represents a Firefox web browser and the second one an HTML element. There are methods in each class to navigate, to select, to find elements and to extract data.
 
 }
 
