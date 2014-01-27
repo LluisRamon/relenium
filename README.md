@@ -27,7 +27,20 @@ In case you are using Windows you will also need [rtools][]. In case R is trying
 
 ## Bugs and new features
 
-To report technical problems with relenium, please file an issue on [Github][] with a [short reproducible example][]. Feedback is welcomed and any new features should be filed as issues as well.
+To report technical problems with relenium, please file an issue on [Github][] with a [short reproducible example][]. Including the ouptut of the following code will make much easier to track any problem.
+
+```
+library(relenium)
+
+sessionInfo()
+
+firefox <- firefoxClass$new()
+firefox$getCapabilities()
+firefox$getVersion()
+firefox$close()
+```
+
+Feedback is welcomed and any new features should be filed as issues as well.
 
 
 [Barcelona R user group]: http://rugbcn.wordpress.com/
