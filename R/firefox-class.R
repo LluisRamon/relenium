@@ -113,6 +113,15 @@ firefoxClass$methods(printHtml = function(){
   return()
 })
 
+firefoxClass$methods(getCapabilities = function(){
+  return(.self$tryExc(J(javaDriver, "getCapabilities")))
+})
+
+firefoxClass$methods(getVersion = function(){
+  capabilities <- .self$getCapabilities()
+  return(J(capabilities, "getVersion"))
+})
+
 
 .DollarNames.firefoxClass <- function(x, pattern){
 

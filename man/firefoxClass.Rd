@@ -41,7 +41,9 @@ A simple \code{firefoxClass} example can be found at the end of this file. You c
            \item{\code{printHtml()}:}{Use this method to parse and print the html code of the last loaded page. It is similar to getPageSource but it returns the html code in a more readable form.}
            \item{\code{forward()}:}{Use this method to move forward a single "item" in the browser's history. It does nothing if it is on the last page viewed.}
            \item{\code{back()}:}{Use this method to move back a single "item" in the browser's history.}
-           \item{\code{close()}:}{Use this method to close the Firefox browser.} 
+           \item{\code{close()}:}{Use this method to close the Firefox browser.}
+           \item{\code{getCapabilities()}:}{Use this method to get your Firefox browser capabilities, platform, version, etc.} 
+           \item{\code{getVersion()}:}{Use this method to get your Firefox browser version.} 
 
       }
       % Thre documentation links
