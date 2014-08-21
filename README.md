@@ -1,3 +1,17 @@
+
+> Dear relenium users, 
+
+> We have noticed that other Selenium bindings have been developed and successfully contributed on CRAN ([RSelenium][]). Aleix and me (Lluís) think that it doesn't make much sense to have two Selenium bindings in the R community. As we have failed to contribute [relenium][] and [seleniumJars][] on CRAN, we encourage you to switch to RSelenium. We will be updating Selenium JARS for a while but we will no longer improve relenium or fix any issues, neither try again to contribute it on CRAN. We thank all of you for the comments, improvements and ideas that have been shared with us. We have enjoyed developing relenium and we are happy that a Selenium binding is available in the R community. RSelenium is an [rOpenSci][] package and we are sure that it will be well maintained.
+
+[RSelenium]: https://github.com/ropensci/RSelenium
+[rOpenSci]: http://ropensci.org/packages/
+[relenium]: https://github.com/LluisRamon/relenium
+[seleniumJars]: https://github.com/LluisRamon/seleniumJars
+
+---
+
+
+
 ## Introduction
 
 [Selenium][] is a popular suite of tools specifically designed for automating web browsers. Selenium allows users to write tests in a number of popular programming languages including Java. The __relenium package__ is intended to provide access to Selenium and use it to boost web navigation and to ease the path for web scraping in R.
